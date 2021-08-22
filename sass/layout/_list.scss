@@ -1,0 +1,33 @@
+* {
+  border: $test-border;
+}
+
+.big-container {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5em;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  letter-spacing: 0.3em;
+  font-weight: $font-bold;
+  color: $text-main;
+  font-size: 1.5em;
+}
+
+.theme {
+  display: flex;
+  align-items: center;
+}
+
+.title{
+  display: flex;
+  align-items: center;
+}
