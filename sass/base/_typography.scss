@@ -1,0 +1,25 @@
+// general typography
+// general headers, general text
+// title headers here as well
+
+// reset margins but bottom margin
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0 0 0.75rem;
+}
+
+// 0 bottom margin for the last element inside a parent
+h1:last-child,
+h2:last-child,
+h3:last-child,
+h4:last-child,
+h5:last-child,
+h6:last-child,
+p:last-child {
+  margin-bottom: 0;
+}

@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
+// 1. Config files and helpers
+@import 'abstracts/colors';
+@import 'abstracts/type';
+
+// 2. Vendor
+@import 'vendor/normalize';
+
+// 3. Base styles
+@import 'base/base';
+@import 'base/typography';
+
+// 4. layout
+@import 'layout/grid';
+@import 'layout/header';
+@import 'layout/nav';
+@import 'layout/hero';
+@import 'layout/footer';
+
+// 5. Components
+@import 'components/buttons';
+@import 'components/cta';
+
+// test
+.container,
+.container p {
+  border: $test-border;
+}
