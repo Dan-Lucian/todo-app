@@ -348,7 +348,7 @@ template {
 body {
   text-align: center;
   font-size: 13px;
-  color: #393a4c;
+  color: #484b6a;
   background: #fafafa;
 }
 
@@ -416,6 +416,7 @@ p:last-child {
   left: 0;
   right: 0;
   padding: 1.5em;
+  overflow: auto;
 }
 
 .header {
@@ -454,23 +455,56 @@ p:last-child {
 .create-todo {
   border-radius: 5px;
   justify-content: left;
+  align-items: baseline;
 }
-
-.create-input {
-  border: none;
+.create-todo .input-container {
+  position: relative;
+  width: 90%;
   margin-left: 0.7em;
+}
+.create-todo input {
+  border-bottom: 2px solid #484b6a;
+  border: none;
+  border: 0;
+  padding: 5px 0;
+  border-bottom: 1px solid #ccc;
+  width: 100%;
+}
+.create-todo input:focus {
+  outline: none;
+}
+.create-todo input ~ span {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #3a7bfd;
+  transition: 0.4s;
+}
+.create-todo input:focus ~ span {
+  width: 100%;
+  transition: 0.4s;
+  left: 0;
 }
 
 .list-container {
   margin-top: 1em;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-}
-.list-container ul {
-  border-radius: 50px;
-  overflow: hidden;
+  box-shadow: 0 5px 20px -5px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  margin-bottom: 1em;
+  background: rgba(0, 0, 0, 0.089);
 }
 .list-container li {
-  border-bottom: 1px solid black;
+  margin-bottom: 2px;
+}
+.list-container li:first-of-type {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.list-container li:last-of-type {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 .task-container {
@@ -491,6 +525,34 @@ ul .tasks-status {
   color: #9394a5;
   justify-content: space-between;
   border-bottom: none;
+}
+
+.tasks-filter {
+  background: #fff;
+  margin-bottom: 3em;
+}
+.tasks-filter ul {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.tasks-filter button {
+  background: none;
+  border: none;
+  font-weight: 700;
+  color: #9394a5;
+  font-size: 1.2em;
+  margin: 0 0.3em;
+  padding: 1em 0.8em;
+}
+.tasks-filter button:hover,
+.tasks-filter button:focus {
+  color: #3a7bfd;
+}
+
+.drag-message p {
+  color: #9394a5;
+  font-weight: 700;
 }
 
 .btn {
@@ -518,11 +580,6 @@ ul .tasks-status {
 .btn--secondary:hover, .btn--secondary:focus {
   background: #f00;
   color: #fff;
-}
-
-.container,
-.container p {
-  border: 1px solid black;
 }
 
 /*# sourceMappingURL=main.css.map */

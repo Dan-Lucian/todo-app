@@ -6,6 +6,7 @@
   left: 0;
   right: 0;
   padding: 1.5em;
+  overflow: auto;
 }
 
 .header {
@@ -44,24 +45,61 @@
 .create-todo {
   border-radius: 5px;
   justify-content: left;
-}
+  align-items: baseline;
 
-.create-input {
-  border: none;
-  margin-left: 0.7em;
+  .input-container {
+    position: relative;
+    width: 90%;
+    margin-left: 0.7em;
+  }
+
+  input {
+    border-bottom: 2px solid $light5;
+    border: none;
+    border: 0;
+    padding: 5px 0;
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+  }
+
+  input:focus {
+    outline: none;
+  }
+
+  input ~ span {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: $main;
+    transition: 0.4s;
+  }
+  input:focus ~ span {
+    width: 100%;
+    transition: 0.4s;
+    left: 0;
+  }
 }
 
 .list-container {
   margin-top: 1em;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-
-  ul {
-    border-radius: 50px;
-    overflow: hidden;
-  }
+  box-shadow: 0 5px 20px -5px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  margin-bottom: 1em;
+  background: rgba(0, 0, 0, 0.089);
 
   li {
-    border-bottom: 1px solid black;
+    margin-bottom: 2px;
+  }
+
+  li:first-of-type {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  li:last-of-type {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
   }
 }
 
@@ -83,4 +121,35 @@ ul .tasks-status {
   color: $light4;
   justify-content: space-between;
   border-bottom: none;
+}
+
+.tasks-filter {
+  background: $white;
+  margin-bottom: 3em;
+
+  ul {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  button {
+    background: none;
+    border: none;
+    font-weight: $font-bold;
+    color: $light4;
+    font-size: 1.2em;
+    margin: 0 0.3em;
+    padding: 1em 0.8em;
+  }
+
+  button:hover,
+  button:focus {
+    color: $main;
+  }
+}
+
+.drag-message p {
+  color: $light4;
+  font-weight: $font-bold;
 }

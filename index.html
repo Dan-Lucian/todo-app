@@ -15,7 +15,7 @@
     ></script>
 
     <!-- My Script -->
-    <script defer src="js/script.js"></script>
+    <script type="module" defer src="js/main.js"></script>
   </head>
 
   <body>
@@ -45,13 +45,16 @@
             <div class="checkbox">
               <img src="img/icon-check.svg" alt="check icon" />
             </div>
-            <input
-              type="text"
-              name="create-input"
-              id="create-input"
-              class="create-input"
-              placeholder="Create a new todo..."
-            />
+            <div class="input-container">
+              <input
+                type="text"
+                name="input"
+                id="input"
+                class="input"
+                placeholder="Create a new todo..."
+              />
+              <span class="focus-border"></span>
+            </div>
           </div>
 
           <div class="list-container">
@@ -67,29 +70,22 @@
                   <img src="img/icon-cross.svg" alt="cross icon" />
                 </div>
               </li>
-              <li>
-                <div class="task-container">
-                  <div class="checkbox">
-                    <img src="img/icon-check.svg" alt="check icon" />
-                  </div>
-                  <div class="task">Do something</div>
-                </div>
-                <div class="cross-icon">
-                  <img src="img/icon-cross.svg" alt="cross icon" />
-                </div>
-              </li>
-
               <li class="tasks-status">
                 <div class="tasks-left">2 items left</div>
                 <div class="tasks-clear">Clear completed</div>
               </li>
             </ul>
           </div>
-          <div class="filter-tasks">
-            <button>All</button>
-            <button>Active</button>
-            <button>Completed</button>
+
+          <!-- tasks filter -->
+          <div class="tasks-filter">
+            <ul class="unstyled-list">
+              <li><button id="tasks-all">All</button></li>
+              <li><button id="tasks-active">Active</button></li>
+              <li><button id="tasks-completed">Completed</button></li>
+            </ul>
           </div>
+          <div class="drag-message"><p>Drag and drop to reorder list</p></div>
         </div>
       </section>
     </main>
@@ -98,6 +94,8 @@
     <!--                Footer                 -->
     <!-- ------------------------------------- -->
 
-    <footer></footer>
+    <footer>
+      <div class="test-box"></div>
+    </footer>
   </body>
 </html>
