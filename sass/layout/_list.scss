@@ -1,7 +1,3 @@
-* {
-  border: $test-border;
-}
-
 .big-container {
   width: 100%;
   position: fixed;
@@ -16,18 +12,75 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.4em;
   font-weight: $font-bold;
-  color: $text-main;
-  font-size: 1.5em;
+  color: $light-main;
+  font-size: 2em;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 .theme {
   display: flex;
   align-items: center;
+  width: 20px;
+  height: 20px;
 }
 
-.title{
+.title {
   display: flex;
   align-items: center;
+}
+
+.create-todo,
+.list-container li {
+  background: $white;
+  padding: 1em 1.3em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.create-todo {
+  border-radius: 5px;
+  justify-content: left;
+}
+
+.create-input {
+  border: none;
+  margin-left: 0.7em;
+}
+
+.list-container {
+  margin-top: 1em;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+
+  ul {
+    border-radius: 50px;
+    overflow: hidden;
+  }
+
+  li {
+    border-bottom: 1px solid black;
+  }
+}
+
+.task-container {
+  display: flex;
+  align-items: baseline;
+}
+
+.task {
+  margin-left: 0.7em;
+}
+
+.cross-icon {
+  height: 1em;
+  width: 1em;
+}
+
+ul .tasks-status {
+  color: $light4;
+  justify-content: space-between;
+  border-bottom: none;
 }

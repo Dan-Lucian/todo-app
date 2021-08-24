@@ -9,8 +9,9 @@
 
 body {
   text-align: center;
-  font-size: 18px;
+  font-size: 13px;
   color: $Very-Dark-Grayish-Blue;
+  background: $light-main;
 }
 
 // if img smaller than container, img will resize to fit
@@ -32,4 +33,14 @@ img {
   @media (min-width: 725px) {
     display: block;
   }
+}
+
+.checkbox{
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: $checkbox;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
