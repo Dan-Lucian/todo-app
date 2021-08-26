@@ -347,7 +347,7 @@ template {
 
 body {
   text-align: center;
-  font-size: 13px;
+  font-size: 18px;
   color: #484b6a;
   background: #fafafa;
 }
@@ -373,13 +373,14 @@ img {
 }
 
 .checkbox {
-  height: 20px;
-  width: 20px;
+  height: 23px;
+  width: 23px;
   border-radius: 50%;
   background: linear-gradient(#57ddff, #c058f3);
   display: flex;
   align-items: center;
   justify-content: center;
+  vertical-align: middle;
 }
 
 h1,
@@ -415,7 +416,7 @@ p:last-child {
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 1.5em;
+  padding: 1.3em;
   overflow: auto;
 }
 
@@ -423,19 +424,20 @@ p:last-child {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  letter-spacing: 0.4em;
+  letter-spacing: 0.3em;
   font-weight: 700;
   color: #fafafa;
   font-size: 2em;
-  margin-top: 1em;
-  margin-bottom: 1em;
+  margin-top: 0.3em;
+  margin-bottom: 0.6em;
 }
 
 .theme {
   display: flex;
   align-items: center;
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
+  transform: translateY(-4px);
 }
 
 .title {
@@ -446,21 +448,22 @@ p:last-child {
 .create-todo,
 .list-container li {
   background: #fff;
-  padding: 1em 1.3em;
+  padding: 0.9em 1.2em;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
 }
 
 .create-todo {
   border-radius: 5px;
   justify-content: left;
-  align-items: baseline;
+  box-shadow: 0 5px 20px -5px rgba(0, 0, 0, 0.2);
 }
 .create-todo .input-container {
   position: relative;
-  width: 90%;
-  margin-left: 0.7em;
+  flex-grow: 1;
+  margin-left: 0.6em;
+  transform: translateY(1px);
 }
 .create-todo input {
   border-bottom: 2px solid #484b6a;
@@ -509,11 +512,12 @@ p:last-child {
 
 .task-container {
   display: flex;
-  align-items: baseline;
+  align-items: center;
 }
 
 .task {
-  margin-left: 0.7em;
+  margin-left: 0.6em;
+  transform: translateY(2px);
 }
 
 .cross-icon {
@@ -530,6 +534,9 @@ ul .tasks-status {
 .tasks-filter {
   background: #fff;
   margin-bottom: 3em;
+  box-shadow: 0 5px 20px -5px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  overflow: hidden;
 }
 .tasks-filter ul {
   display: flex;
@@ -541,8 +548,7 @@ ul .tasks-status {
   border: none;
   font-weight: 700;
   color: #9394a5;
-  font-size: 1.2em;
-  margin: 0 0.3em;
+  margin: 0 0.2em;
   padding: 1em 0.8em;
 }
 .tasks-filter button:hover,
