@@ -1,0 +1,106 @@
+.tasks-container li {
+  background: $white;
+  padding: 0.9em 1.2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tasks-container {
+  margin-top: 1em;
+  box-shadow: $shadow;
+  border-radius: 5px;
+  margin-bottom: 1em;
+  background: rgba(0, 0, 0, 0.089);
+
+  li {
+    margin-bottom: 2px;
+  }
+
+  li:first-of-type {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  li:last-of-type {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+}
+
+.task-container {
+  display: flex;
+  align-items: center;
+}
+
+.task {
+  margin-left: 0.6em;
+  transform: translateY(2px);
+  cursor: pointer;
+}
+
+.cross-icon {
+  height: 1em;
+  width: 1em;
+}
+
+ul .tasks-status {
+  color: $light4;
+  justify-content: space-between;
+  border-bottom: none;
+  font-size: 0.8em;
+
+  @media (min-width: 420px) {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+.tasks-filter {
+  background: $white;
+  margin-bottom: 3em;
+  box-shadow: $shadow;
+  border-radius: 5px;
+  overflow: hidden;
+
+  @media (min-width: 420px) {
+    box-shadow: none;
+    margin-bottom: 0;
+
+    li {
+      padding: 0;
+    }
+  }
+
+  ul {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  button {
+    background: none;
+    border: none;
+    font-weight: $font-bold;
+    color: $light4;
+    margin: 0 0.2em;
+    padding: 1em 0.8em;
+  }
+
+  button:hover,
+  button:focus {
+    color: $light5;
+  }
+}
+
+.button-active {
+  color: $main;
+}
+
+.drag-message p {
+  color: $light4;
+  font-weight: $font-bold;
+}
+
+.input::placeholder {
+  color: $light4;
+}

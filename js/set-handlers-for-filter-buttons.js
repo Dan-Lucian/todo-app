@@ -5,8 +5,6 @@ export function setHandlersForFilterButtons() {
   tasksFilterList.onpointerdown = tasksFilter;
 
   function tasksFilter() {
-    event.preventDefault();
-
     if (event.target.id === 'tasks-all') console.log('tasks all pressed');
     if (event.target.id === 'tasks-active') console.log('tasks active pressed');
     if (event.target.id === 'tasks-completed')

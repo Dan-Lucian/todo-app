@@ -12,6 +12,9 @@ body {
   font-size: 18px;
   color: $light5;
   background: $light-main;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 // if img smaller than container, img will resize to fit
@@ -35,13 +38,23 @@ img {
   }
 }
 
-.checkbox{
+.checkbox {
   height: 23px;
   width: 23px;
   border-radius: 50%;
-  background: $checkbox;
   display: flex;
   align-items: center;
   justify-content: center;
   vertical-align: middle;
+  cursor: pointer;
+  border: 2px solid $light-secondary;
+}
+
+.checked {
+  background: $checkbox;
+  border: none;
+
+  & + div {
+    text-decoration: line-through;
+  }
 }

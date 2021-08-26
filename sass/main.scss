@@ -13,11 +13,12 @@
 
 // 4. layout
 @import 'layout/header';
-@import 'layout/list';
+@import 'layout/container';
+@import 'layout/create-todo';
+@import 'layout/tasks';
 
 // 5. Components
 @import 'components/buttons';
 @import 'components/cta';
 
 // testing ground
-

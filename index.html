@@ -24,7 +24,13 @@
     <!-- ------------------------------------- -->
 
     <header>
-      <div class="background-image-light"></div>
+      <div>
+        <img
+          id="background-image"
+          src="img/bg-mobile-light.jpg"
+          alt="background image"
+        />
+      </div>
     </header>
 
     <main>
@@ -57,14 +63,14 @@
             </div>
           </div>
 
-          <div class="list-container">
+          <div class="tasks-container" id="tasks-container">
             <ul class="unstyled-list">
               <li>
                 <div class="task-container">
                   <div class="checkbox">
                     <img src="img/icon-check.svg" alt="check icon" />
                   </div>
-                  <div class="task">Do something else</div>
+                  <div class="task">Jog around the park 3x</div>
                 </div>
                 <div class="cross-icon">
                   <img src="img/icon-cross.svg" alt="cross icon" />
@@ -93,14 +99,14 @@
                 </div>
               </li>
               <li class="tasks-status">
-                <div class="tasks-left">2 items left</div>
+                <div class="tasks-left" id="tasks-left">2 items left</div>
                 <div class="tasks-clear">Clear completed</div>
               </li>
             </ul>
           </div>
 
           <!-- tasks filter -->
-          <div class="tasks-filter">
+          <div class="tasks-filter" id="tasks-filter">
             <ul class="unstyled-list">
               <li><button id="tasks-all">All</button></li>
               <li><button id="tasks-active">Active</button></li>
