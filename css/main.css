@@ -404,7 +404,7 @@ p:last-child {
 }
 
 .background-image-light {
-  background: url(../../img/bg-mobile-light.jpg);
+  background: url(../img/bg-mobile-light.jpg);
   background-size: cover;
   height: 200px;
 }
@@ -457,7 +457,7 @@ p:last-child {
 .create-todo {
   border-radius: 5px;
   justify-content: left;
-  box-shadow: 0 5px 20px -5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 20px -5px rgba(0, 0, 0, 0.2);
 }
 .create-todo .input-container {
   position: relative;
@@ -493,7 +493,7 @@ p:last-child {
 
 .list-container {
   margin-top: 1em;
-  box-shadow: 0 5px 20px -5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 20px -5px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   margin-bottom: 1em;
   background: rgba(0, 0, 0, 0.089);
@@ -534,7 +534,7 @@ ul .tasks-status {
 .tasks-filter {
   background: #fff;
   margin-bottom: 3em;
-  box-shadow: 0 5px 20px -5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 20px -5px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   overflow: hidden;
 }
