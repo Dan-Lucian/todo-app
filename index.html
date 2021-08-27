@@ -14,15 +14,14 @@
       crossorigin="anonymous"
     ></script>
 
+    <!-- Firebase Script -->
+    <script defer type="module" src="js/firebase-config.js"></script>
+
     <!-- My Script -->
-    <script type="module" defer src="js/main.js"></script>
+    <script defer type="module" src="js/main.js"></script>
   </head>
 
   <body>
-    <!-- ------------------------------------- -->
-    <!--               Header                  -->
-    <!-- ------------------------------------- -->
-
     <header>
       <div>
         <img
@@ -67,7 +66,7 @@
 
           <div class="tasks-container" id="tasks-container">
             <ul class="unstyled-list">
-              <li>
+              <li class="task-row">
                 <div class="task-container">
                   <div class="checkbox">
                     <img src="img/icon-check.svg" alt="check icon" />
@@ -78,7 +77,7 @@
                   <img src="img/icon-cross.svg" alt="cross icon" />
                 </div>
               </li>
-              <li>
+              <li class="task-row">
                 <div class="task-container">
                   <div class="checkbox">
                     <img src="img/icon-check.svg" alt="check icon" />
@@ -89,7 +88,7 @@
                   <img src="img/icon-cross.svg" alt="cross icon" />
                 </div>
               </li>
-              <li>
+              <li class="task-row">
                 <div class="task-container">
                   <div class="checkbox">
                     <img src="img/icon-check.svg" alt="check icon" />

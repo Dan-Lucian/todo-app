@@ -12,6 +12,6 @@ bigContainerPointerdown();
 import { setMediaQueries } from './set-media-queries.js';
 setMediaQueries();
 
-// set events for the form + task creation
-import {setFormEvents} from './set-form-events.js';
-setFormEvents()
+// set events for the form + create task from input
+import { setFormEvents } from './set-form-events.js';
+setFormEvents();

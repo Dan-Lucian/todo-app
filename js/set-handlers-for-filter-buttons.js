@@ -3,9 +3,7 @@ export function setHandlersForFilterButtons() {
   tasksFilterList.onpointerdown = tasksFilter;
 
   function tasksFilter() {
-    const tasks = document.querySelectorAll(
-      '.tasks-container > ul > li:not(.tasks-status)'
-    );
+    const tasks = document.querySelectorAll('.task-row');
 
     if (event.target.id === 'tasks-all') unhideAllTasks(tasks);
     if (event.target.id === 'tasks-active') hideCompletedTasks(tasks);
@@ -14,13 +12,13 @@ export function setHandlersForFilterButtons() {
 
   function unhideAllTasks(tasks) {
     tasks.forEach((task) => {
-      task.className = '';
+      task.className = 'task-row';
     });
   }
 
   function hideCompletedTasks(tasks) {
     tasks.forEach((task) => {
-      task.className = '';
+      task.className = 'task-row';
       if (task.querySelector('.checkbox').classList.contains('checked'))
         task.classList.add('hidden');
     });
@@ -28,7 +26,7 @@ export function setHandlersForFilterButtons() {
 
   function hideActiveTasks(tasks) {
     tasks.forEach((task) => {
-      task.className = '';
+      task.className = 'task-row';
       if (!task.querySelector('.checkbox').classList.contains('checked'))
         task.classList.add('hidden');
     });
