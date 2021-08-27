@@ -39,8 +39,8 @@ img {
 }
 
 .checkbox {
-  height: 23px;
-  width: 23px;
+  min-height: 23px;
+  min-width: 23px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -56,5 +56,28 @@ img {
 
   & + div {
     text-decoration: line-through;
+    color: $light3;
   }
+}
+
+button {
+  background: none;
+  border: none;
+  font-weight: $font-bold;
+  color: $light4;
+  margin: 0 0.2em;
+  padding: 1em 0.8em;
+}
+
+button:hover,
+button:focus {
+  color: $light5;
+}
+
+.opace {
+  opacity: 0 !important;
+}
+
+.hidden {
+  display: none !important;
 }

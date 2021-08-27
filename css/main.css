@@ -376,8 +376,8 @@ img {
 }
 
 .checkbox {
-  height: 23px;
-  width: 23px;
+  min-height: 23px;
+  min-width: 23px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -393,6 +393,29 @@ img {
 }
 .checked + div {
   text-decoration: line-through;
+  color: #d2d3db;
+}
+
+button {
+  background: none;
+  border: none;
+  font-weight: 700;
+  color: #9394a5;
+  margin: 0 0.2em;
+  padding: 1em 0.8em;
+}
+
+button:hover,
+button:focus {
+  color: #595c78;
+}
+
+.opace {
+  opacity: 0 !important;
+}
+
+.hidden {
+  display: none !important;
 }
 
 h1,
@@ -522,9 +545,15 @@ header div img {
   border-radius: 5px;
   margin-bottom: 1em;
   background: rgba(0, 0, 0, 0.089);
+  text-align: left;
 }
 .tasks-container li {
+  opacity: 1;
   margin-bottom: 2px;
+  transition: opacity 200ms ease-in-out;
+}
+.tasks-container li:hover .cross-icon {
+  opacity: 1;
 }
 .tasks-container li:first-of-type {
   border-top-left-radius: 5px;
@@ -538,17 +567,23 @@ header div img {
 .task-container {
   display: flex;
   align-items: center;
+  flex-grow: 1;
 }
 
 .task {
   margin-left: 0.6em;
   transform: translateY(2px);
   cursor: pointer;
+  flex-grow: 1;
 }
 
 .cross-icon {
+  min-height: 1em;
   height: 1em;
-  width: 1em;
+  min-width: 1em;
+  opacity: 0;
+  cursor: pointer;
+  transition: opacity 200ms ease-in-out;
 }
 
 ul .tasks-status {
@@ -585,21 +620,13 @@ ul .tasks-status {
   justify-content: center;
   width: 100%;
 }
-.tasks-filter button {
-  background: none;
-  border: none;
-  font-weight: 700;
-  color: #9394a5;
-  margin: 0 0.2em;
-  padding: 1em 0.8em;
-}
-.tasks-filter button:hover,
-.tasks-filter button:focus {
-  color: #595c78;
+
+.tasks-left {
+  padding: 0 1.5em;
 }
 
-.button-active {
-  color: #3a7bfd;
+.tasks-clear {
+  margin: 0;
 }
 
 .drag-message p {

@@ -12,9 +12,16 @@
   border-radius: 5px;
   margin-bottom: 1em;
   background: rgba(0, 0, 0, 0.089);
+  text-align: left;
 
   li {
+    opacity: 1;
     margin-bottom: 2px;
+    transition: opacity 200ms ease-in-out;
+  }
+
+  li:hover .cross-icon {
+    opacity: 1;
   }
 
   li:first-of-type {
@@ -30,17 +37,23 @@
 .task-container {
   display: flex;
   align-items: center;
+  flex-grow: 1;
 }
 
 .task {
   margin-left: 0.6em;
   transform: translateY(2px);
   cursor: pointer;
+  flex-grow: 1;
 }
 
 .cross-icon {
+  min-height: 1em;
   height: 1em;
-  width: 1em;
+  min-width: 1em;
+  opacity: 0;
+  cursor: pointer;
+  transition: opacity 200ms ease-in-out;
 }
 
 ul .tasks-status {
@@ -76,24 +89,14 @@ ul .tasks-status {
     justify-content: center;
     width: 100%;
   }
-
-  button {
-    background: none;
-    border: none;
-    font-weight: $font-bold;
-    color: $light4;
-    margin: 0 0.2em;
-    padding: 1em 0.8em;
-  }
-
-  button:hover,
-  button:focus {
-    color: $light5;
-  }
 }
 
-.button-active {
-  color: $main;
+.tasks-left{
+  padding: 0 1.5em;
+}
+
+.tasks-clear{
+  margin: 0;
 }
 
 .drag-message p {

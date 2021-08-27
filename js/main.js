@@ -11,3 +11,7 @@ bigContainerPointerdown();
 // move tasks-filter element at screen > 420px
 import { setMediaQueries } from './set-media-queries.js';
 setMediaQueries();
+
+// set events for the form + task creation
+import {setFormEvents} from './set-form-events.js';
+setFormEvents()

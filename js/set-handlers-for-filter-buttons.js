@@ -1,13 +1,36 @@
 export function setHandlersForFilterButtons() {
   const tasksFilterList = document.querySelector('.tasks-filter');
-  console.log(tasksFilterList);
-
   tasksFilterList.onpointerdown = tasksFilter;
 
   function tasksFilter() {
-    if (event.target.id === 'tasks-all') console.log('tasks all pressed');
-    if (event.target.id === 'tasks-active') console.log('tasks active pressed');
-    if (event.target.id === 'tasks-completed')
-      console.log('tasks completed pressed');
+    const tasks = document.querySelectorAll(
+      '.tasks-container > ul > li:not(.tasks-status)'
+    );
+
+    if (event.target.id === 'tasks-all') unhideAllTasks(tasks);
+    if (event.target.id === 'tasks-active') hideCompletedTasks(tasks);
+    if (event.target.id === 'tasks-completed') hideActiveTasks(tasks);
+  }
+
+  function unhideAllTasks(tasks) {
+    tasks.forEach((task) => {
+      task.className = '';
+    });
+  }
+
+  function hideCompletedTasks(tasks) {
+    tasks.forEach((task) => {
+      task.className = '';
+      if (task.querySelector('.checkbox').classList.contains('checked'))
+        task.classList.add('hidden');
+    });
+  }
+
+  function hideActiveTasks(tasks) {
+    tasks.forEach((task) => {
+      task.className = '';
+      if (!task.querySelector('.checkbox').classList.contains('checked'))
+        task.classList.add('hidden');
+    });
   }
 }

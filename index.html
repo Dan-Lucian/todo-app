@@ -52,14 +52,16 @@
               <img src="img/icon-check.svg" alt="check icon" />
             </div>
             <div class="input-container">
-              <input
-                type="text"
-                name="input"
-                id="input"
-                class="input"
-                placeholder="Create a new todo..."
-              />
-              <span class="focus-border"></span>
+              <form action="#" id="form">
+                <input
+                  type="text"
+                  name="input"
+                  id="input"
+                  class="input"
+                  placeholder="Create a new todo..."
+                />
+                <span class="focus-border"></span>
+              </form>
             </div>
           </div>
 
@@ -100,7 +102,7 @@
               </li>
               <li class="tasks-status">
                 <div class="tasks-left" id="tasks-left">2 items left</div>
-                <div class="tasks-clear">Clear completed</div>
+                <button class="tasks-clear">Clear completed</button>
               </li>
             </ul>
           </div>
