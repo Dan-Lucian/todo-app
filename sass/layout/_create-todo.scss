@@ -10,12 +10,21 @@
   margin-bottom: 0.6em;
 }
 
-.theme {
+button.theme {
   display: flex;
   align-items: center;
   width: 25px;
   height: 25px;
   transform: translateY(-4px);
+  margin: 0;
+  padding: 0;
+
+  &:focus,
+  &:hover {
+    border: none;
+    outline: none;
+    opacity: 0.7;
+  }
 }
 
 .title {

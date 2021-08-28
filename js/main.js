@@ -1,15 +1,15 @@
 'use strict';
 
-// generate todo list
+// generate todo list when page loads
 import { generateList } from './generate-list.js';
 generateList();
 
 // make filter buttons actually filter
-import { setHandlersForFilterButtons } from './set-handlers-for-filter-buttons.js';
+import { setHandlersForFilterButtons } from './set-filter-events.js';
 setHandlersForFilterButtons();
 
-// make checkbox clickable
-import { setBigContainerPointerdownEvents } from './set-big-container-pointerdown-events.js.js';
+// set handlers for checkbox, cross icon, clear tasks
+import { setBigContainerPointerdownEvents } from './set-pointerdown-events.js.js';
 setBigContainerPointerdownEvents();
 
 // move tasks-filter element at screen > 420px
@@ -19,8 +19,3 @@ setMediaQueries();
 // set events for the form + create task from input
 import { setFormEvents } from './set-form-events.js';
 setFormEvents();
-
-setTimeout(
-  () => console.log(document.querySelector('.task-row').dataset['id']),
-  1000
-);

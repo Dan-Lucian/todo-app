@@ -453,7 +453,7 @@ header div img {
 
 .big-container {
   width: 90vw;
-  max-width: 550px;
+  max-width: 700px;
   position: relative;
   top: 1em;
   bottom: 0;
@@ -473,12 +473,19 @@ header div img {
   margin-bottom: 0.6em;
 }
 
-.theme {
+button.theme {
   display: flex;
   align-items: center;
   width: 25px;
   height: 25px;
   transform: translateY(-4px);
+  margin: 0;
+  padding: 0;
+}
+button.theme:focus, button.theme:hover {
+  border: none;
+  outline: none;
+  opacity: 0.7;
 }
 
 .title {
