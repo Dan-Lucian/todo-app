@@ -1,6 +1,7 @@
 import {
   collection,
   addDoc,
+  getDocs,
   getFirestore,
 } from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js';
 
@@ -27,10 +28,25 @@ export function setFormEvents() {
     input.value = '';
   }
 
-  function addTextToDb(text) {
-    addDoc(collection(db, 'todo-items'), {
+  async function addTextToDb(text) {
+    await addDoc(collection(db, 'todo-items'), {
       text: text,
       status: 'active',
+    });
+
+    const taskRows = document.querySelectorAll('.task-row');
+    const taskRowsIds = [];
+
+    for (const task of taskRows) {
+      taskRowsIds.push(task.dataset.id);
+    }
+
+    const querySnapshot = await getDocs(collection(db, 'todo-items'));
+    querySnapshot.forEach((doc) => {
+      if (!taskRowsIds.includes(doc.id)) {
+        setIdAttribute(doc.id);
+        return;
+      }
     });
   }
 
@@ -38,7 +54,7 @@ export function setFormEvents() {
     const taskList = document.querySelector('.tasks-container ul');
     taskList.insertAdjacentHTML(
       'afterbegin',
-      `<li class="task-row opace">
+      `<li class="task-row opace" data-id="null">
         <div class="task-container">
           <div class="checkbox">
             <img src="img/icon-check.svg" alt="check icon" />
@@ -55,5 +71,10 @@ export function setFormEvents() {
     setTimeout(() =>
       document.querySelector('.opace').classList.toggle('opace')
     );
+  }
+
+  function setIdAttribute(id) {
+    const task = document.querySelector('[data-id="null"]');
+    task.dataset.id = id;
   }
 }
