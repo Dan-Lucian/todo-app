@@ -1,3 +1,3 @@
-# todo-app syncedwith Firebase
+# todo-app synced with Firebase
  
 nothing special here
