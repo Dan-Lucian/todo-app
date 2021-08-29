@@ -1,11 +1,7 @@
-.big-container {
-  width: 90vw;
-  max-width: 700px;
-  position: relative;
-  top: 1em;
-  bottom: 0;
-  left: 0;
-  right: 0;
+@import 'abstracts/colors';
+
+body.dark {
+  background: $dark1;
 }
 
 .big-container.dark {

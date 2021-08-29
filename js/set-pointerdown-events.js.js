@@ -5,6 +5,8 @@ import {
   getFirestore,
 } from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js';
 
+import { changeTheme } from './change-theme.js';
+
 const db = getFirestore();
 
 export function setBigContainerPointerdownEvents() {
@@ -34,6 +36,8 @@ function pointerDownFunc(e) {
 
 function toggleTaskStatus(e) {
   e.target.closest('.checkbox').classList.toggle('checked');
+  e.target.closest('.checkbox').querySelector('img').classList.toggle('hidden');
+
 
   const task = e.target.closest('.task-row');
   const docRef = doc(db, 'todo-items', task.dataset.id);
@@ -69,8 +73,4 @@ function removeCompletedTasks() {
 function updateCounter() {
   const taskCount = document.querySelectorAll('.task-row').length;
   document.getElementById('tasks-left').innerHTML = `${taskCount} items left`;
-}
-
-function changeTheme() {
-  console.log('button pressed');
 }

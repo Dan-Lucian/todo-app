@@ -57,7 +57,7 @@ function insertTask(inputValue) {
     `<li class="task-row opace" data-id="null" data-status="active">
       <div class="task-container">
         <div class="checkbox">
-          <img src="img/icon-check.svg" alt="check icon" />
+          <img src="img/icon-check.svg" alt="check icon" class="hidden" />
         </div>
         <div class="task">${inputValue}</div>
       </div>

@@ -355,6 +355,10 @@ body {
   align-items: center;
 }
 
+body.dark {
+  background: #161722;
+}
+
 img {
   max-width: 100%;
   max-height: 100%;
@@ -405,9 +409,13 @@ button {
   padding: 1em 0.8em;
 }
 
-button:hover,
-button:focus {
+button:hover {
   color: #595c78;
+}
+
+button:focus {
+  color: #3a7bfd;
+  outline: none;
 }
 
 .opace {
@@ -459,6 +467,36 @@ header div img {
   bottom: 0;
   left: 0;
   right: 0;
+}
+
+.big-container.dark li,
+.big-container.dark .create-todo,
+.big-container.dark .input,
+.big-container.dark .tasks-filter {
+  background: #25273c;
+}
+.big-container.dark input {
+  color: #cacde8;
+}
+.big-container.dark li,
+.big-container.dark button {
+  color: #4d5066;
+}
+.big-container.dark button:hover {
+  color: #e4e5f1;
+}
+.big-container.dark button:focus {
+  color: #3a7bfd;
+  outline: none;
+}
+.big-container.dark .checkbox {
+  border-color: #4d5066;
+}
+.big-container.dark .task-row {
+  color: #cacde8;
+}
+.big-container.dark .checked + div {
+  color: #4d5066;
 }
 
 .header {

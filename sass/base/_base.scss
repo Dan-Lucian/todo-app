@@ -17,6 +17,10 @@ body {
   align-items: center;
 }
 
+body.dark {
+  background: $dark1;
+}
+
 // if img smaller than container, img will resize to fit
 img {
   max-width: 100%;
@@ -69,9 +73,13 @@ button {
   padding: 1em 0.8em;
 }
 
-button:hover,
-button:focus {
+button:hover {
   color: $light5;
+}
+
+button:focus {
+  color: $main;
+  outline: none;
 }
 
 .opace {

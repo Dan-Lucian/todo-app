@@ -12,9 +12,10 @@ setHandlersForFilterButtons();
 import { setBigContainerPointerdownEvents } from './set-pointerdown-events.js.js';
 setBigContainerPointerdownEvents();
 
+// moved to main-set theme load script
 // move tasks-filter element at screen > 420px
-import { setMediaQueries } from './set-media-queries.js';
-setMediaQueries();
+// import { setMediaQueries } from './set-media-queries.js';
+// setMediaQueries();
 
 // set events for the form + create task from input
 import { setFormEvents } from './set-form-events.js';

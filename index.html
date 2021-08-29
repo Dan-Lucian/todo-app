@@ -6,7 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>test-website</title>
+
+    <!-- theme sript -->
+
     <link rel="stylesheet" href="css/main.css" />
+    <script src="js/main-set-theme.js"></script>
 
     <!-- Font Awesome 5 -->
     <script
@@ -42,14 +46,17 @@
           <div class="header">
             <div class="title">TODO</div>
             <button class="theme" id="button-theme">
-              <img src="img/icon-moon.svg" alt="moon icon" class="moon" />
+              <img
+                src="img/icon-moon.svg"
+                alt="moon icon"
+                class="moon"
+                id="img-theme"
+              />
             </button>
           </div>
 
           <div class="create-todo">
-            <div class="checkbox">
-              <img src="img/icon-check.svg" alt="check icon" />
-            </div>
+            <div class="checkbox"></div>
             <div class="input-container">
               <form action="#" id="form">
                 <input

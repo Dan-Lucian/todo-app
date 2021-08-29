@@ -19,13 +19,15 @@ export async function generateList() {
 function insertTask(inputValue, id, status) {
   const taskList = document.querySelector('.tasks-container ul');
 
-  const checkedInsertion = status === 'active' ? '' : ' checked';
+  const insertCheckedClass = status === 'active' ? '' : ' checked';
+  const insertHiddenClass = status === 'active' ? ' hidden' : '';
+
   taskList.insertAdjacentHTML(
     'afterbegin',
     `<li class="task-row opace" data-id="${id}" data-status="${status}">
       <div class="task-container">
-        <div class="checkbox${checkedInsertion}">
-          <img src="img/icon-check.svg" alt="check icon" />
+        <div class="checkbox${insertCheckedClass}">
+          <img src="img/icon-check.svg" alt="check icon" class="${insertHiddenClass}"/>
         </div>
         <div class="task">${inputValue}</div>
       </div>
