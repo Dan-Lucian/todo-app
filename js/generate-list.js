@@ -13,6 +13,7 @@ export async function generateList() {
     insertTask(doc.data().text, doc.id, doc.data().status);
   });
 
+  console.log('list generation started at: ' + performance.now());
   updateCounter();
 }
 

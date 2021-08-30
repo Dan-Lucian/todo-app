@@ -40,12 +40,8 @@ function hideActiveTasks(tasks) {
 }
 
 function updateCounter() {
-  const tasksCounter = document.getElementById('tasks-left');
-
-  const totalTasksCount = document.querySelectorAll('.task-row').length;
-  const hiddenTasksCount = document.querySelectorAll('li.hidden').length;
-  const number = totalTasksCount - hiddenTasksCount;
-  tasksCounter.innerHTML = `${number} items left`;
+  const taskCount = document.querySelectorAll('.task-row:not(.hidden)').length;
+  document.getElementById('tasks-left').innerHTML = `${taskCount} items left`;
 }
 
 function updateCookie(filterButtonPressed){
