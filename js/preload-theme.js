@@ -6,9 +6,9 @@ const isCookieThemeLight =
 changeColorsByTheme(isCookieThemeLight);
 
 // dark or light mode
-document.addEventListener('DOMContentLoaded', function () {
-  setMediaQueries();
-  changeTheme();
+document.addEventListener('readystatechange', function () {
+  if (document.readyState === 'complete') return;
+  changeTheme(isCookieThemeLight);
 });
 
 function setCookie() {
@@ -28,37 +28,34 @@ function changeColorsByTheme(isCookieThemeLight) {
   document.getElementsByTagName('html')[0].classList.add('dark');
 }
 
-function setMediaQueries() {
-  if (window.innerWidth > 420) {
-    document.getElementById('background-image').src =
-      'img/bg-desktop-light.jpg';
-
-    const tasksFilter = document.getElementById('tasks-filter');
-    tasksFilter.remove();
-    document.getElementById('tasks-left').after(tasksFilter);
-  }
-}
-
 // changing themes here
-function changeTheme() {
-  const isCookieThemeLight =
-    document.cookie.match(/(?<=theme=)[^;]*/)[0] === 'light';
-
-  console.log('isCookieThemeLight = ' + isCookieThemeLight);
-
+function changeTheme(isCookieThemeLight) {
   changeImgBg(isCookieThemeLight);
   changeImgTheme(isCookieThemeLight);
 }
 
 function changeImgBg(isCookieThemeLight) {
-  if (isCookieThemeLight) {
-    document.getElementById('background-image').src =
-      '../img/bg-desktop-light.jpg';
-    return;
-  }
+  const bg = document.getElementById('background-image');
 
-  document.getElementById('background-image').src =
-    '../img/bg-desktop-dark.jpg';
+  switch (`${isCookieThemeLight}_` + `${window.innerWidth > 420}`) {
+    case 'false_false':
+      bg.src = 'img/bg-mobile-dark.jpg';
+      break;
+
+    case 'false_true':
+      bg.src = 'img/bg-desktop-dark.jpg';
+      mergeButtons();
+      break;
+
+    case 'true_false':
+      bg.src = 'img/bg-mobile-light.jpg';
+      break;
+
+    case 'true_true':
+      bg.src = 'img/bg-desktop-light.jpg';
+      mergeButtons();
+      break;
+  }
 }
 
 function changeImgTheme(isCookieThemeLight) {
@@ -68,4 +65,10 @@ function changeImgTheme(isCookieThemeLight) {
   }
 
   document.getElementById('img-theme').src = '../img/icon-sun.svg';
+}
+
+function mergeButtons() {
+  const tasksFilter = document.getElementById('tasks-filter');
+  tasksFilter.remove();
+  document.getElementById('tasks-left').after(tasksFilter);
 }

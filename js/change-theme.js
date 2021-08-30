@@ -25,14 +25,25 @@ function changeCookieTheme() {
 }
 
 function changeImgBg(isCookieThemeLight) {
-  if (isCookieThemeLight) {
-    document.getElementById('background-image').src =
-      '../img/bg-desktop-light.jpg';
-    return;
-  }
+  const bg = document.getElementById('background-image');
 
-  document.getElementById('background-image').src =
-    '../img/bg-desktop-dark.jpg';
+  switch (`${isCookieThemeLight}_` + `${window.innerWidth > 420}`) {
+    case 'false_false':
+      bg.src = 'img/bg-mobile-dark.jpg';
+      break;
+
+    case 'false_true':
+      bg.src = 'img/bg-desktop-dark.jpg';
+      break;
+
+    case 'true_false':
+      bg.src = 'img/bg-mobile-light.jpg';
+      break;
+
+    case 'true_true':
+      bg.src = 'img/bg-desktop-light.jpg';
+      break;
+  }
 }
 
 function changeImgTheme(isCookieThemeLight) {
