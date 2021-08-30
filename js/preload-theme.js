@@ -20,12 +20,14 @@ function setCookie() {
 }
 
 function changeColorsByTheme(isCookieThemeLight) {
+  const html = document.documentElement;
+
   if (isCookieThemeLight) {
-    document.getElementsByTagName('html')[0].classList.remove('dark');
+    html.classList.remove('dark');
     return;
   }
 
-  document.getElementsByTagName('html')[0].classList.add('dark');
+  html.classList.add('dark');
 }
 
 // changing themes here

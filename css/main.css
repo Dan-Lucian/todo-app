@@ -365,6 +365,12 @@ html.dark {
   --crossed-text-color: #4d5066;
 }
 
+html.transition, html.transition *, html.transition *:before, html.transition *:after {
+  transition: all 200ms !important;
+  transition-duration: 200ms !important;
+  transition-delay: 0s !important;
+}
+
 body {
   text-align: center;
   font-size: 18px;

@@ -27,6 +27,17 @@ html.dark {
   --crossed-text-color: #{$dark4};
 }
 
+html.transition {
+  &,
+  & *,
+  & *:before,
+  & *:after {
+    transition: all 200ms !important;
+    transition-duration: 200ms !important;
+    transition-delay: 0s !important;
+  }
+}
+
 body {
   text-align: center;
   font-size: 18px;

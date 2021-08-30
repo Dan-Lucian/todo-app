@@ -56,10 +56,16 @@ function changeImgTheme(isCookieThemeLight) {
 }
 
 function changeColorsByTheme(isCookieThemeLight) {
+  const html = document.documentElement;
+
   if (isCookieThemeLight) {
-    document.getElementsByTagName('html')[0].classList.remove('dark');
+    html.classList.add('transition');
+    setTimeout(() => html.classList.remove('transition'), 300);
+    html.classList.remove('dark');
     return;
   }
 
-  document.getElementsByTagName('html')[0].classList.add('dark');
+  html.classList.add('transition');
+  setTimeout(() => html.classList.remove('transition'), 300);
+  html.classList.add('dark');
 }
