@@ -345,18 +345,34 @@ template {
   box-sizing: border-box;
 }
 
+html {
+  --body-bg-color: #fafafa;
+  --elem-bg-color: #fff;
+  --elem-text-color: #595c78;
+  --button-text-color: #9394a5;
+  --button-hover-text-color: #595c78;
+  --checkbox-border-color: #e4e5f1;
+  --crossed-text-color: #d2d3db;
+}
+
+html.dark {
+  --body-bg-color: #161722;
+  --elem-bg-color: #25273c;
+  --elem-text-color: #cacde8;
+  --button-text-color: #777a92;
+  --button-hover-text-color: #e4e5f1;
+  --checkbox-border-color: #4d5066;
+  --crossed-text-color: #4d5066;
+}
+
 body {
   text-align: center;
   font-size: 18px;
   color: #595c78;
-  background: #fafafa;
+  background: var(--body-bg-color);
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-body.dark {
-  background: #161722;
 }
 
 img {
@@ -388,7 +404,7 @@ img {
   justify-content: center;
   vertical-align: middle;
   cursor: pointer;
-  border: 2px solid #e4e5f1;
+  border: 2px solid var(--checkbox-border-color);
 }
 
 .checked {
@@ -397,20 +413,20 @@ img {
 }
 .checked + div {
   text-decoration: line-through;
-  color: #d2d3db;
+  color: var(--crossed-text-color);
 }
 
 button {
   background: none;
   border: none;
   font-weight: 700;
-  color: #9394a5;
+  color: var(--button-text-color);
   margin: 0 0.2em;
   padding: 1em 0.8em;
 }
 
 button:hover {
-  color: #595c78;
+  color: var(--button-hover-text-color);
 }
 
 button:focus {
@@ -469,36 +485,6 @@ header div img {
   right: 0;
 }
 
-.big-container.dark li,
-.big-container.dark .create-todo,
-.big-container.dark .input,
-.big-container.dark .tasks-filter {
-  background: #25273c;
-}
-.big-container.dark input {
-  color: #cacde8;
-}
-.big-container.dark li,
-.big-container.dark button {
-  color: #4d5066;
-}
-.big-container.dark button:hover {
-  color: #e4e5f1;
-}
-.big-container.dark button:focus {
-  color: #3a7bfd;
-  outline: none;
-}
-.big-container.dark .checkbox {
-  border-color: #4d5066;
-}
-.big-container.dark .task-row {
-  color: #cacde8;
-}
-.big-container.dark .checked + div {
-  color: #4d5066;
-}
-
 .header {
   display: flex;
   justify-content: space-between;
@@ -532,14 +518,11 @@ button.theme:focus, button.theme:hover {
 }
 
 .create-todo {
-  background: #fff;
+  background: var(--elem-bg-color);
   padding: 0.9em 1.2em;
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.create-todo {
   border-radius: 5px;
   justify-content: left;
   box-shadow: 0 0 20px -5px rgba(0, 0, 0, 0.2);
@@ -551,11 +534,11 @@ button.theme:focus, button.theme:hover {
   transform: translateY(1px);
 }
 .create-todo input {
-  border-bottom: 2px solid #595c78;
+  background: var(--elem-bg-color);
   border: none;
   border: 0;
+  border-bottom: 1px solid var(--button-text-color);
   padding: 5px 0;
-  border-bottom: 1px solid #ccc;
   width: 100%;
 }
 .create-todo input:focus {
@@ -577,7 +560,7 @@ button.theme:focus, button.theme:hover {
 }
 
 .tasks-container li {
-  background: #fff;
+  background: var(--elem-bg-color);
   padding: 0.9em 1.2em;
   display: flex;
   justify-content: space-between;
@@ -592,14 +575,6 @@ button.theme:focus, button.theme:hover {
   background: rgba(0, 0, 0, 0.089);
   text-align: left;
 }
-.tasks-container li {
-  opacity: 1;
-  margin-bottom: 2px;
-  transition: opacity 100ms ease-in-out, transform 100ms ease-in-out;
-}
-.tasks-container li:hover .cross-icon {
-  opacity: 1;
-}
 .tasks-container li:first-of-type {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
@@ -609,9 +584,19 @@ button.theme:focus, button.theme:hover {
   border-bottom-right-radius: 5px;
 }
 
+.task-row {
+  color: var(--elem-text-color);
+  opacity: 1;
+  margin-bottom: 2px;
+  transition: opacity 100ms ease-in-out, transform 100ms ease-in-out;
+}
+
 .task-row:hover {
   transform: translateY(-2px);
   box-shadow: 0 0 7px 0 rgba(22, 23, 34, 0.5);
+}
+.task-row:hover .cross-icon {
+  opacity: 1;
 }
 
 .task-container {
@@ -650,7 +635,7 @@ ul .tasks-status {
 }
 
 .tasks-filter {
-  background: #fff;
+  background: var(--elem-bg-color);
   margin-bottom: 3em;
   box-shadow: 0 0 20px -5px rgba(0, 0, 0, 0.2);
   border-radius: 5px;

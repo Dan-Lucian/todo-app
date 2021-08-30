@@ -1,10 +1,12 @@
 // create or read the theme cookie
 setCookie();
-console.log(document.readyState);
+const isCookieThemeLight =
+  document.cookie.match(/(?<=theme=)[^;]*/)[0] === 'light';
+
+changeColorsByTheme(isCookieThemeLight);
 
 // dark or light mode
 document.addEventListener('DOMContentLoaded', function () {
-  console.log(document.readyState);
   setMediaQueries();
   changeTheme();
 });
@@ -15,6 +17,15 @@ function setCookie() {
   if (!theme)
     document.cookie =
       'theme=light; samesite=lax; expires=Tue, 19 Jan 2038 03:14:07 GMT';
+}
+
+function changeColorsByTheme(isCookieThemeLight) {
+  if (isCookieThemeLight) {
+    document.getElementsByTagName('html')[0].classList.remove('dark');
+    return;
+  }
+
+  document.getElementsByTagName('html')[0].classList.add('dark');
 }
 
 function setMediaQueries() {
@@ -37,7 +48,6 @@ function changeTheme() {
 
   changeImgBg(isCookieThemeLight);
   changeImgTheme(isCookieThemeLight);
-  changeColorsByTheme(isCookieThemeLight);
 }
 
 function changeImgBg(isCookieThemeLight) {
@@ -58,15 +68,4 @@ function changeImgTheme(isCookieThemeLight) {
   }
 
   document.getElementById('img-theme').src = '../img/icon-sun.svg';
-}
-
-function changeColorsByTheme(isCookieThemeLight) {
-  if (isCookieThemeLight) {
-    document.getElementsByTagName('body')[0].classList.remove('dark');
-    document.querySelector('.big-container').classList.remove('dark');
-    return;
-  }
-
-  document.getElementsByTagName('body')[0].classList.add('dark');
-  document.querySelector('.big-container').classList.add('dark');
 }

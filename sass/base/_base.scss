@@ -7,18 +7,34 @@
   box-sizing: border-box;
 }
 
+html {
+  --body-bg-color: #{$light1};
+  --elem-bg-color: #{$white};
+  --elem-text-color: #{$light5};
+  --button-text-color: #{$light4};
+  --button-hover-text-color: #{$light5};
+  --checkbox-border-color: #{$light2};
+  --crossed-text-color: #{$light3};
+}
+
+html.dark {
+  --body-bg-color: #{$dark1};
+  --elem-bg-color: #{$dark2};
+  --elem-text-color: #{$dark6};
+  --button-text-color: #{$dark5};
+  --button-hover-text-color: #{$dark7};
+  --checkbox-border-color: #{$dark4};
+  --crossed-text-color: #{$dark4};
+}
+
 body {
   text-align: center;
   font-size: 18px;
   color: $light5;
-  background: $light-main;
+  background: var(--body-bg-color);
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-body.dark {
-  background: $dark1;
 }
 
 // if img smaller than container, img will resize to fit
@@ -51,7 +67,7 @@ img {
   justify-content: center;
   vertical-align: middle;
   cursor: pointer;
-  border: 2px solid $light-secondary;
+  border: 2px solid var(--checkbox-border-color);
 }
 
 .checked {
@@ -60,7 +76,7 @@ img {
 
   & + div {
     text-decoration: line-through;
-    color: $light3;
+    color: var(--crossed-text-color);
   }
 }
 
@@ -68,13 +84,13 @@ button {
   background: none;
   border: none;
   font-weight: $font-bold;
-  color: $light4;
+  color: var(--button-text-color);
   margin: 0 0.2em;
   padding: 1em 0.8em;
 }
 
 button:hover {
-  color: $light5;
+  color: var(--button-hover-text-color);
 }
 
 button:focus {

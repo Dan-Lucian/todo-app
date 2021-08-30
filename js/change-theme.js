@@ -46,11 +46,9 @@ function changeImgTheme(isCookieThemeLight) {
 
 function changeColorsByTheme(isCookieThemeLight) {
   if (isCookieThemeLight) {
-    document.getElementsByTagName('body')[0].classList.remove('dark');
-    document.querySelector('.big-container').classList.remove('dark');
+    document.getElementsByTagName('html')[0].classList.remove('dark');
     return;
   }
 
-  document.getElementsByTagName('body')[0].classList.add('dark');
-  document.querySelector('.big-container').classList.add('dark');
+  document.getElementsByTagName('html')[0].classList.add('dark');
 }

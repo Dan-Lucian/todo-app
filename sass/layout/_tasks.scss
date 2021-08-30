@@ -1,5 +1,5 @@
 .tasks-container li {
-  background: $white;
+  background: var(--elem-bg-color);
   padding: 0.9em 1.2em;
   display: flex;
   justify-content: space-between;
@@ -14,16 +14,6 @@
   background: rgba(0, 0, 0, 0.089);
   text-align: left;
 
-  li {
-    opacity: 1;
-    margin-bottom: 2px;
-    transition: opacity 100ms ease-in-out, transform 100ms ease-in-out;
-  }
-
-  li:hover .cross-icon {
-    opacity: 1;
-  }
-
   li:first-of-type {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
@@ -34,9 +24,20 @@
   }
 }
 
+.task-row {
+  color: var(--elem-text-color);
+  opacity: 1;
+  margin-bottom: 2px;
+  transition: opacity 100ms ease-in-out, transform 100ms ease-in-out;
+}
+
 .task-row:hover {
   transform: translateY(-2px);
   box-shadow: 0 0 7px 0 rgba(22, 23, 34, 0.5);
+
+  & .cross-icon {
+    opacity: 1;
+  }
 }
 
 .task-container {
@@ -74,7 +75,7 @@ ul .tasks-status {
 }
 
 .tasks-filter {
-  background: $white;
+  background: var(--elem-bg-color);
   margin-bottom: 3em;
   box-shadow: $shadow;
   border-radius: 5px;
