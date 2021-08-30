@@ -485,7 +485,7 @@ header div img {
   width: 90vw;
   max-width: 700px;
   position: relative;
-  top: 1em;
+  top: 7em;
   bottom: 0;
   left: 0;
   right: 0;
@@ -541,6 +541,7 @@ button.theme:focus, button.theme:hover {
 }
 .create-todo input {
   background: var(--elem-bg-color);
+  color: var(--elem-text-color);
   border: none;
   border: 0;
   border-bottom: 1px solid var(--button-text-color);
@@ -574,6 +575,7 @@ button.theme:focus, button.theme:hover {
 }
 
 .tasks-container {
+  transition: all 200ms ease-in;
   margin-top: 1em;
   box-shadow: 0 0 20px -5px rgba(0, 0, 0, 0.2);
   border-radius: 5px;

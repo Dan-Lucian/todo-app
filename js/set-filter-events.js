@@ -16,6 +16,7 @@ function unhideAllTasks(tasks) {
     task.className = 'task-row';
   });
   updateCounter();
+  updateCookie('all')
 }
 
 function hideCompletedTasks(tasks) {
@@ -25,6 +26,7 @@ function hideCompletedTasks(tasks) {
       task.classList.add('hidden');
   });
   updateCounter();
+  updateCookie('active')
 }
 
 function hideActiveTasks(tasks) {
@@ -34,6 +36,7 @@ function hideActiveTasks(tasks) {
       task.classList.add('hidden');
   });
   updateCounter();
+  updateCookie('completed');
 }
 
 function updateCounter() {
@@ -43,4 +46,8 @@ function updateCounter() {
   const hiddenTasksCount = document.querySelectorAll('li.hidden').length;
   const number = totalTasksCount - hiddenTasksCount;
   tasksCounter.innerHTML = `${number} items left`;
+}
+
+function updateCookie(filterButtonPressed){
+  document.cookie = `filterButton=${filterButtonPressed}; samesite=lax; expires=Tue, 19 Jan 2038 03:14:07 GMT`;
 }
