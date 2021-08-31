@@ -54,15 +54,15 @@ function insertTask(inputValue) {
   const taskList = document.querySelector('.tasks-container ul');
   taskList.insertAdjacentHTML(
     'afterbegin',
-    `<li class="task-row opace" data-id="null" data-status="active">
+    `<li class="task-row opace draggable" data-id="null" data-status="active">
       <div class="task-container">
         <div class="checkbox">
-          <img src="img/icon-check.svg" alt="check icon" class="hidden" />
+          <img height="9px" width="11px" src="img/icon-check.svg" alt="check icon" class="hidden" />
         </div>
         <div class="task">${inputValue}</div>
       </div>
       <div class="cross-icon">
-        <img src="img/icon-cross.svg" alt="cross icon" />
+        <img width="18px" height="18px" src="img/icon-cross.svg" alt="cross icon" />
       </div>
     </li>`
   );

@@ -13,25 +13,25 @@ function tasksFilter() {
 
 function unhideAllTasks(tasks) {
   tasks.forEach((task) => {
-    task.className = 'task-row';
+    task.classList.remove('hidden');
   });
   updateCounter();
-  updateCookie('all')
+  updateCookie('all');
 }
 
 function hideCompletedTasks(tasks) {
   tasks.forEach((task) => {
-    task.className = 'task-row';
+    task.classList.remove('hidden');
     if (task.querySelector('.checkbox').classList.contains('checked'))
       task.classList.add('hidden');
   });
   updateCounter();
-  updateCookie('active')
+  updateCookie('active');
 }
 
 function hideActiveTasks(tasks) {
   tasks.forEach((task) => {
-    task.className = 'task-row';
+    task.classList.remove('hidden');
     if (!task.querySelector('.checkbox').classList.contains('checked'))
       task.classList.add('hidden');
   });
@@ -44,6 +44,6 @@ function updateCounter() {
   document.getElementById('tasks-left').innerHTML = `${taskCount} items left`;
 }
 
-function updateCookie(filterButtonPressed){
+function updateCookie(filterButtonPressed) {
   document.cookie = `filterButton=${filterButtonPressed}; samesite=lax; expires=Tue, 19 Jan 2038 03:14:07 GMT`;
 }
