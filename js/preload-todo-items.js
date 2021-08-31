@@ -14,7 +14,7 @@ async function generateList() {
     insertTask(doc.data().text, doc.id, doc.data().status);
   });
 
-  console.log('list generation started at: ' + performance.now());
+  console.log('list generation ended at: ' + performance.now());
   updateCounter();
 }
 
@@ -26,7 +26,7 @@ function insertTask(inputValue, id, status) {
 
   taskList.insertAdjacentHTML(
     'afterbegin',
-    `<li class="task-row opace${insertHiddenClassByCookie(
+    `<li class="task-row draggable opace${insertHiddenClassByCookie(
       status
     )}" data-id="${id}" data-status="${status}">
       <div class="task-container">

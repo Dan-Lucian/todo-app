@@ -6,6 +6,7 @@ import {
 } from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js';
 
 import { changeTheme } from './change-theme.js';
+import { makeTasksDraggable } from './make-tasks-draggable.js';
 
 const db = getFirestore();
 
@@ -21,23 +22,28 @@ function pointerDownFunc(e) {
   if (e.target.closest('.checkbox')) {
     e.preventDefault();
     toggleTaskStatus(e);
+    return;
   }
 
   if (e.target.closest('.cross-icon')) {
     e.preventDefault();
     removeTask(e.target);
+    return;
   }
 
   if (e.target === document.getElementById('tasks-clear')) {
     e.preventDefault();
     removeCompletedTasks();
+    return;
   }
+
+  // make tasks draggable
+  makeTasksDraggable();
 }
 
 function toggleTaskStatus(e) {
   e.target.closest('.checkbox').classList.toggle('checked');
   e.target.closest('.checkbox').querySelector('img').classList.toggle('hidden');
-
 
   const task = e.target.closest('.task-row');
   const docRef = doc(db, 'todo-items', task.dataset.id);
