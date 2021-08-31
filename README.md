@@ -1,3 +1,3 @@
-# todo-app synced with Firebase and a cookie
+# Vanilla JS todo-app synced with Firebase
  
 nothing special here
