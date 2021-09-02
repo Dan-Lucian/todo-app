@@ -1,9 +1,5 @@
 'use strict';
 
-// generate todo list when page loads
-// import { generateList } from './generate-list.js';
-// generateList();
-
 // make filter buttons actually filter
 import { setHandlersForFilterButtons } from './set-filter-events.js';
 setHandlersForFilterButtons();

@@ -2,8 +2,6 @@ export function makeTasksDraggable() {
   const draggable = event.target.closest('.draggable');
   if (!draggable) return;
 
-  console.log('pressed down');
-
   //prevent mousedown selection behavior
   event.preventDefault();
 
@@ -22,8 +20,6 @@ export function makeTasksDraggable() {
       'pointermove',
       setHandlerToCheckForMouseLeavingContainer
     );
-
-    console.log('moving element');
 
     // create and replace with a placeholder
     placeholder.className = 'task-row task-placeholder';
@@ -126,8 +122,6 @@ export function makeTasksDraggable() {
 
     draggable.style.top = top + 'px';
     draggable.style.left = left + 'px';
-
-    console.log('moving NOW');
   }
 
   function setHandlerToCheckForMouseLeavingContainer() {
@@ -150,7 +144,6 @@ export function makeTasksDraggable() {
     ) {
       //dipatch a pointerup which then will cancel the timout
       document.dispatchEvent(new Event('pointerup'));
-      console.log('artifically dispatched');
 
       // remove event that was looking for mouse leaving the container
       document.removeEventListener(
@@ -162,7 +155,6 @@ export function makeTasksDraggable() {
 
   // cancel timeout + remove events
   function onPointerUp() {
-    console.log('pointer up');
     clearTimeout(timerId);
     document.removeEventListener('pointermove', onPointerMove);
     document.removeEventListener('pointerup', onPointerUp);
