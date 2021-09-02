@@ -1,7 +1,4 @@
 // create or read the theme cookie
-window.onload = function () {
-  console.log('load finished at: ' + performance.now());
-};
 
 setCookies();
 changeColorsByTheme();

@@ -9,12 +9,14 @@ const db = getFirestore();
 generateList();
 
 async function generateList() {
+  console.log('request for collection sent: ' + performance.now());
   const querySnapshot = await getDocs(collection(db, 'todo-items'));
+  console.log('request for collection received: ' + performance.now());
+
   querySnapshot.forEach((doc) => {
     insertTask(doc.data().text, doc.id, doc.data().status);
   });
 
-  console.log('list generation ended at: ' + performance.now());
   updateCounter();
 }
 
