@@ -35,9 +35,13 @@ html.transition {
   & *:before,
   & *:after {
     transition: all 200ms !important;
-    transition-duration: 200ms !important;
     transition-delay: 0s !important;
   }
+}
+
+.tasks-container.transition {
+  transition: height 2000ms !important;
+  transition-delay: 0s !important;
 }
 
 body {

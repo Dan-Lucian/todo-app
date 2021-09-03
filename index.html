@@ -20,7 +20,7 @@
     <!-- preload-todo-items -->
     <script async type="module" src="js/preload-todo-items.js"></script>
 
-    <!-- stylesheet -->
+    <!-- main stylesheet -->
     <link rel="stylesheet" href="css/main.css" />
 
     <!-- My Script -->
@@ -35,9 +35,6 @@
   </head>
 
   <body>
-    <script>
-      console.log('Body exists: ' + performance.now());
-    </script>
     <header>
       <div>
         <img
@@ -51,72 +48,62 @@
     </header>
 
     <main>
-      <!-- ---------------------------------- -->
-      <!--             Section  1             -->
-      <!-- ---------------------------------- -->
-
-      <section>
-        <div class="big-container">
-          <div class="header">
-            <div class="title">TODO</div>
-            <button class="theme" id="button-theme">
-              <img
-                src="img/icon-moon.svg"
-                alt="moon icon"
-                class="moon"
-                id="img-theme"
-                width="25px"
-                height="25px"
-              />
-            </button>
-          </div>
-
-          <div class="create-todo">
-            <div class="checkbox"></div>
-            <div class="input-container">
-              <form action="#" id="form">
-                <input
-                  type="text"
-                  name="input"
-                  id="input"
-                  class="input"
-                  placeholder="Create a new todo..."
-                />
-                <span class="focus-border"></span>
-              </form>
-            </div>
-          </div>
-
-          <div class="tasks-container" id="tasks-container">
-            <ul class="unstyled-list">
-              <li class="tasks-status">
-                <div class="tasks-left" id="tasks-left">0 items left</div>
-                <button class="tasks-clear" id="tasks-clear">
-                  Clear completed
-                </button>
-              </li>
-            </ul>
-          </div>
-
-          <!-- tasks filter -->
-          <div class="tasks-filter" id="tasks-filter">
-            <ul class="unstyled-list">
-              <li><button id="tasks-all">All</button></li>
-              <li><button id="tasks-active">Active</button></li>
-              <li><button id="tasks-completed">Completed</button></li>
-            </ul>
-          </div>
-          <div class="drag-message"><p>Drag and drop to reorder list</p></div>
+      <div class="big-container">
+        <!-- top image and text -->
+        <div class="header">
+          <div class="title" id="button">TODO</div>
+          <button class="theme" id="button-theme">
+            <span>Change Theme</span>
+            <img
+              src="img/icon-moon.svg"
+              alt="theme change icon"
+              id="img-theme"
+              width="25px"
+              height="25px"
+            />
+          </button>
         </div>
-      </section>
+
+        <!-- top input -->
+        <div class="create-todo">
+          <div class="checkbox"></div>
+          <div class="input-container">
+            <form action="#" id="form">
+              <input
+                type="text"
+                name="input"
+                id="input"
+                class="input"
+                placeholder="Create a new todo..."
+              />
+              <span class="focus-border"></span>
+            </form>
+          </div>
+        </div>
+
+        <!-- list body -->
+        <div class="tasks-container" id="tasks-container">
+          <ul class="unstyled-list">
+          </ul>
+        </div>
+
+        <div class="tasks-status">
+          <div class="tasks-left" id="tasks-left">0 items left</div>
+          <button class="tasks-clear" id="tasks-clear">
+            Clear completed
+          </button>
+        </div>
+
+        <!-- tasks filter -->
+        <div class="tasks-filter" id="tasks-filter">
+          <ul class="unstyled-list">
+            <li><button id="tasks-all">All</button></li>
+            <li><button id="tasks-active">Active</button></li>
+            <li><button id="tasks-completed">Completed</button></li>
+          </ul>
+        </div>
+        <div class="drag-message"><p>Drag and drop to reorder the list</p></div>
+      </div>
     </main>
-
-    <!-- ------------------------------------- -->
-    <!--                Footer                 -->
-    <!-- ------------------------------------- -->
-
-    <footer>
-      <div class="test-box"></div>
-    </footer>
   </body>
 </html>

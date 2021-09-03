@@ -52,7 +52,8 @@ async function addTextToDb(text) {
       return;
     }
 
-    incrementOrder(doc);
+    incrementOrderInDb(doc);
+    incrementOrderInHtml(doc.id);
   });
 }
 
@@ -60,7 +61,7 @@ function insertTask(inputValue) {
   const taskList = document.querySelector('.tasks-container ul');
   taskList.insertAdjacentHTML(
     'afterbegin',
-    `<li class="task-row opace draggable" data-id="null" data-status="active">
+    `<li class="task-row opace draggable" data-id="null" data-status="active" data-order="1">
       <div class="task-container">
         <div class="checkbox">
           <img height="9px" width="11px" src="img/icon-check.svg" alt="check icon" class="hidden" />
@@ -84,12 +85,16 @@ function setIdAttribute(id) {
   task.dataset.id = id;
 }
 
-function incrementOrder(item) {
+function incrementOrderInDb(item) {
   const docRef = doc(db, 'todo-items', item.id);
-  console.log(docRef);
   updateDoc(docRef, {
     order: increment(1),
   });
+}
+
+function incrementOrderInHtml(id) {
+  const item = document.querySelector(`li[data-id='${id}']`);
+  item.dataset.order = +item.dataset.order + 1;
 }
 
 function updateCounter() {

@@ -11,3 +11,7 @@ setBigContainerPointerdownEvents();
 // set events for the form + create task from input
 import { setFormEvents } from './set-form-events.js';
 setFormEvents();
+
+document.getElementById('button').onclick = function () {
+  document.querySelector('.tasks-container').classList.toggle('grow');
+};
