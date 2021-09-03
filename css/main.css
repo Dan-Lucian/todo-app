@@ -746,4 +746,9 @@ button.theme img {
   color: #fff;
 }
 
+#img-theme {
+  border: none;
+  outline: none;
+}
+
 /*# sourceMappingURL=main.css.map */
