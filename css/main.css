@@ -372,11 +372,6 @@ html.transition, html.transition *, html.transition *:before, html.transition *:
   transition-delay: 0s !important;
 }
 
-.tasks-container.transition {
-  transition: height 2000ms !important;
-  transition-delay: 0s !important;
-}
-
 body {
   text-align: center;
   font-size: 18px;
@@ -452,6 +447,11 @@ button:focus {
 
 .hidden {
   display: none !important;
+}
+
+.throw-left-animation {
+  transition: transform 400ms ease-in-out !important;
+  transform: translateX(-1000px) !important;
 }
 
 h1,
@@ -593,6 +593,8 @@ button.theme img {
   background: rgba(0, 0, 0, 0.089);
   text-align: left;
   overflow: hidden;
+  transition: height 1000ms !important;
+  transition-delay: 0s !important;
 }
 .tasks-container li:first-of-type {
   border-top-left-radius: 5px;
@@ -608,7 +610,7 @@ button.theme img {
   color: var(--elem-text-color);
   opacity: 1;
   margin-bottom: 2px;
-  transition: opacity 100ms ease-in-out, transform 100ms ease-in-out;
+  transition: opacity 400ms ease-in-out, transform 100ms ease-in-out;
   background: var(--elem-bg-color);
   padding: 0.9em 1.2em;
   display: flex;
@@ -631,6 +633,10 @@ button.theme img {
   display: flex;
   align-items: center;
   flex-grow: 1;
+}
+
+.task-list {
+  margin-top: 2px;
 }
 
 .task {

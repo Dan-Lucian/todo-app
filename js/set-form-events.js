@@ -8,6 +8,8 @@ import {
   getFirestore,
 } from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js';
 
+import { updateContainerHeight, updateCounter } from './helpers.js';
+
 //create the database object
 const db = getFirestore();
 
@@ -29,6 +31,9 @@ function formOnSubmit(e) {
 
   // remove value from the input
   input.value = '';
+
+  // update container height for the animation
+  updateContainerHeight();
 }
 
 async function addTextToDb(text) {
@@ -95,9 +100,4 @@ function incrementOrderInDb(item) {
 function incrementOrderInHtml(id) {
   const item = document.querySelector(`li[data-id='${id}']`);
   item.dataset.order = +item.dataset.order + 1;
-}
-
-function updateCounter() {
-  const taskCount = document.querySelectorAll('.task-row').length;
-  document.getElementById('tasks-left').innerHTML = `${taskCount} items left`;
 }

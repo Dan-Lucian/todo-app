@@ -4,6 +4,8 @@ import {
   getFirestore,
 } from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js';
 
+import { updateContainerHeight, updateCounter } from './helpers.js';
+
 //create the database object
 const db = getFirestore();
 generateList();
@@ -20,6 +22,7 @@ async function generateList() {
       insertTask(obj.text, obj.id, obj.status, obj.order);
     });
 
+  updateContainerHeight();
   updateCounter();
 }
 
@@ -78,9 +81,4 @@ function insertTask(inputValue, id, status, order) {
 
     return '';
   }
-}
-
-function updateCounter() {
-  const taskCount = document.querySelectorAll('.task-row:not(.hidden)').length;
-  document.getElementById('tasks-left').innerHTML = `${taskCount} items left`;
 }
