@@ -353,7 +353,7 @@ html {
   --button-hover-text-color: #595c78;
   --checkbox-border-color: #e4e5f1;
   --crossed-text-color: #d2d3db;
-  --elem-placeholder-bg: #161722;
+  --elem-placeholder-bg: rgba(250, 250, 250, 0.4);
 }
 
 html.dark {
@@ -364,12 +364,11 @@ html.dark {
   --button-hover-text-color: #e4e5f1;
   --checkbox-border-color: #4d5066;
   --crossed-text-color: #4d5066;
-  --elem-placeholder-bg: #fafafa;
+  --elem-placeholder-bg: rgba(37, 39, 60, 0.4);
 }
 
 html.transition, html.transition *, html.transition *:before, html.transition *:after {
   transition: all 200ms !important;
-  transition-duration: 200ms !important;
   transition-delay: 0s !important;
 }
 
@@ -450,6 +449,11 @@ button:focus {
   display: none !important;
 }
 
+.throw-left-animation {
+  transition: transform 400ms ease-in-out !important;
+  transform: translateX(-1000px) !important;
+}
+
 h1,
 h2,
 h3,
@@ -500,7 +504,7 @@ header div img {
   letter-spacing: 0.3em;
   font-weight: 700;
   color: #fafafa;
-  font-size: 2em;
+  font-size: 2.5rem;
   margin-top: 0.3em;
   margin-bottom: 0.6em;
 }
@@ -508,16 +512,21 @@ header div img {
 button.theme {
   display: flex;
   align-items: center;
-  width: 25px;
-  height: 25px;
-  transform: translateY(-4px);
   margin: 0;
   padding: 0;
+  color: inherit;
+  font-size: 2rem;
 }
-button.theme:focus, button.theme:hover {
+button.theme:focus, button.theme:active {
+  color: #fafafa;
   border: none;
   outline: none;
-  opacity: 0.7;
+}
+button.theme:hover {
+  opacity: 0.8;
+}
+button.theme img {
+  margin-left: 1rem;
 }
 
 .title {
@@ -577,21 +586,23 @@ button.theme:focus, button.theme:hover {
 }
 
 .tasks-container {
-  transition: all 200ms ease-in;
   margin-top: 1em;
   box-shadow: 0 0 20px -5px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
-  margin-bottom: 1em;
+  margin-bottom: 0;
   background: rgba(0, 0, 0, 0.089);
   text-align: left;
+  overflow: hidden;
+  transition: height 1000ms !important;
+  transition-delay: 0s !important;
 }
 .tasks-container li:first-of-type {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
-.tasks-container li:last-of-type {
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+
+.grow {
+  height: 500px;
 }
 
 .task-row {
@@ -599,7 +610,7 @@ button.theme:focus, button.theme:hover {
   color: var(--elem-text-color);
   opacity: 1;
   margin-bottom: 2px;
-  transition: opacity 100ms ease-in-out, transform 100ms ease-in-out;
+  transition: opacity 400ms ease-in-out, transform 100ms ease-in-out;
   background: var(--elem-bg-color);
   padding: 0.9em 1.2em;
   display: flex;
@@ -624,6 +635,10 @@ button.theme:focus, button.theme:hover {
   flex-grow: 1;
 }
 
+.task-list {
+  margin-top: 2px;
+}
+
 .task {
   margin-left: 0.6em;
   transform: translateY(2px);
@@ -640,14 +655,20 @@ button.theme:focus, button.theme:hover {
   transition: opacity 200ms ease-in-out;
 }
 
-ul .tasks-status {
-  color: #9394a5;
+.tasks-status {
+  padding: 0.9em 1.2em;
+  display: flex;
+  align-items: center;
   justify-content: space-between;
+  background: var(--elem-bg-color);
+  color: #9394a5;
   border-bottom: none;
   font-size: 0.8em;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 @media (min-width: 420px) {
-  ul .tasks-status {
+  .tasks-status {
     padding-top: 0;
     padding-bottom: 0;
   }
@@ -656,6 +677,7 @@ ul .tasks-status {
 .tasks-filter {
   background: var(--elem-bg-color);
   margin-bottom: 3em;
+  margin-top: 1em;
   box-shadow: 0 0 20px -5px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   overflow: hidden;
@@ -663,7 +685,7 @@ ul .tasks-status {
 @media (min-width: 420px) {
   .tasks-filter {
     box-shadow: none;
-    margin-bottom: 0;
+    margin: 0;
   }
   .tasks-filter li {
     padding: 0;
@@ -671,12 +693,13 @@ ul .tasks-status {
 }
 .tasks-filter ul {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   width: 100%;
 }
 
 .tasks-left {
-  padding: 0 1.5em;
+  padding: 1em 0.8em;
 }
 
 .tasks-clear {
@@ -690,6 +713,10 @@ ul .tasks-status {
 
 .input::placeholder {
   color: #9394a5;
+}
+
+.drag-message {
+  height: 6rem;
 }
 
 .btn {

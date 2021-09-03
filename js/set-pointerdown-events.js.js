@@ -7,6 +7,7 @@ import {
 
 import { changeTheme } from './change-theme.js';
 import { makeTasksDraggable } from './make-tasks-draggable.js';
+import { updateContainerHeight, updateCounter } from './helpers.js';
 
 const db = getFirestore();
 
@@ -16,6 +17,7 @@ export function setBigContainerPointerdownEvents() {
     .addEventListener('pointerdown', pointerDownFunc);
 
   document.getElementById('button-theme').onpointerdown = changeTheme;
+  document.getElementById('tasks-clear').onpointerdown = removeCompletedTasks;
 }
 
 function pointerDownFunc(e) {
@@ -28,12 +30,6 @@ function pointerDownFunc(e) {
   if (e.target.closest('.cross-icon')) {
     e.preventDefault();
     removeTask(e.target);
-    return;
-  }
-
-  if (e.target === document.getElementById('tasks-clear')) {
-    e.preventDefault();
-    removeCompletedTasks();
     return;
   }
 
@@ -62,21 +58,25 @@ function toggleTaskStatus(e) {
 
 function removeTask(rowChild) {
   const task = rowChild.closest('li.task-row');
+
   deleteDoc(doc(db, 'todo-items', task.dataset.id));
-  task.remove();
+
+  task.classList.add('throw-left-animation');
+  setTimeout(() => {
+    task.remove();
+    updateContainerHeight();
+  }, 500);
+
   updateCounter();
 }
 
 function removeCompletedTasks() {
+  event.preventDefault();
+
   const checkboxes = document.querySelectorAll('.checkbox');
   checkboxes.forEach((checkbox) => {
     if (checkbox.classList.contains('checked')) removeTask(checkbox);
   });
 
   updateCounter();
-}
-
-function updateCounter() {
-  const taskCount = document.querySelectorAll('.task-row').length;
-  document.getElementById('tasks-left').innerHTML = `${taskCount} items left`;
 }
