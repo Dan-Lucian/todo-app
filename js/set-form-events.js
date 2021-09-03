@@ -2,6 +2,9 @@ import {
   collection,
   addDoc,
   getDocs,
+  doc,
+  updateDoc,
+  increment,
   getFirestore,
 } from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js';
 
@@ -32,6 +35,7 @@ async function addTextToDb(text) {
   await addDoc(collection(db, 'todo-items'), {
     text: text,
     status: 'active',
+    order: 1,
   });
 
   const taskRows = document.querySelectorAll('.task-row');
@@ -47,6 +51,8 @@ async function addTextToDb(text) {
       setIdAttribute(doc.id);
       return;
     }
+
+    incrementOrder(doc);
   });
 }
 
@@ -76,6 +82,14 @@ function insertTask(inputValue) {
 function setIdAttribute(id) {
   const task = document.querySelector('[data-id="null"]');
   task.dataset.id = id;
+}
+
+function incrementOrder(item) {
+  const docRef = doc(db, 'todo-items', item.id);
+  console.log(docRef);
+  updateDoc(docRef, {
+    order: increment(1),
+  });
 }
 
 function updateCounter() {

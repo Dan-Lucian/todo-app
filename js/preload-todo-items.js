@@ -13,14 +13,31 @@ async function generateList() {
   const querySnapshot = await getDocs(collection(db, 'todo-items'));
   console.log('request for collection received: ' + performance.now());
 
-  querySnapshot.forEach((doc) => {
-    insertTask(doc.data().text, doc.id, doc.data().status);
-  });
+  const arrTasks = extractData(querySnapshot);
+  arrTasks
+    .sort((a, b) => b.order - a.order)
+    .forEach((obj) => {
+      insertTask(obj.text, obj.id, obj.status, obj.order);
+    });
 
   updateCounter();
 }
 
-function insertTask(inputValue, id, status) {
+function extractData(firebaseQuery) {
+  const arr = [];
+  firebaseQuery.forEach((doc) => {
+    arr.push({
+      text: doc.data().text,
+      id: doc.id,
+      status: doc.data().status,
+      order: doc.data().order,
+    });
+  });
+
+  return arr;
+}
+
+function insertTask(inputValue, id, status, order) {
   const taskList = document.querySelector('.tasks-container ul');
 
   const insertCheckedClass = status === 'active' ? '' : ' checked';
@@ -30,7 +47,7 @@ function insertTask(inputValue, id, status) {
     'afterbegin',
     `<li class="task-row draggable opace${insertHiddenClassByCookie(
       status
-    )}" data-id="${id}" data-status="${status}">
+    )}" data-id="${id}" data-status="${status} data-order=${order}">
       <div class="task-container">
         <div class="checkbox${insertCheckedClass}">
           <img height="9px" width="11px" src="img/icon-check.svg" alt="check icon" class="${insertHiddenClass}"/>

@@ -163,10 +163,18 @@ export function makeTasksDraggable() {
       setHandlerToCheckForMouseLeavingContainer
     );
 
+    // if placeholder exists means that an element was lifted
     if (placeholder) {
       placeholder.replaceWith(draggable);
       placeholder.remove();
       draggable.style.cssText = '';
+
+      swapOrderInDb(draggable);
     }
   }
+}
+
+function swapOrderInDb(draggable, placeholder) {
+  // addition dataset-order for both sibling of placeholder and divide by 2
+  // new value assign to draggabnle.dataset.order
 }

@@ -15,7 +15,7 @@ html {
   --button-hover-text-color: #{$light5};
   --checkbox-border-color: #{$light2};
   --crossed-text-color: #{$light3};
-  --elem-placeholder-bg: #{$dark1};
+  --elem-placeholder-bg: #{$placeholder-bg-light};
 }
 
 html.dark {
@@ -26,7 +26,7 @@ html.dark {
   --button-hover-text-color: #{$dark7};
   --checkbox-border-color: #{$dark4};
   --crossed-text-color: #{$dark4};
-  --elem-placeholder-bg: #{$light1};
+  --elem-placeholder-bg: #{$placeholder-bg-dark};
 }
 
 html.transition {

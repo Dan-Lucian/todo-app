@@ -353,7 +353,7 @@ html {
   --button-hover-text-color: #595c78;
   --checkbox-border-color: #e4e5f1;
   --crossed-text-color: #d2d3db;
-  --elem-placeholder-bg: #161722;
+  --elem-placeholder-bg: rgba(250, 250, 250, 0.4);
 }
 
 html.dark {
@@ -364,7 +364,7 @@ html.dark {
   --button-hover-text-color: #e4e5f1;
   --checkbox-border-color: #4d5066;
   --crossed-text-color: #4d5066;
-  --elem-placeholder-bg: #fafafa;
+  --elem-placeholder-bg: rgba(37, 39, 60, 0.4);
 }
 
 html.transition, html.transition *, html.transition *:before, html.transition *:after {
