@@ -86,8 +86,8 @@ function replaceTaskWithPlaceholder(task) {
 
   setTimeout(() => {
     task.replaceWith(placeholder);
-    setTimeout(() => placeholder.classList.add('shrink-animation'), 5);
-  }, 200);
+    setTimeout(() => placeholder.classList.add('shrink-animation'), 50);
+  }, 300);
 
   setTimeout(() => placeholder.remove(), 1000);
 }
