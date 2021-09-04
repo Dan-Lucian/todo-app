@@ -7,7 +7,7 @@ import {
 
 import { changeTheme } from './change-theme.js';
 import { makeTasksDraggable } from './make-tasks-draggable.js';
-import { updateContainerHeight, updateCounter } from './helpers.js';
+import { updateCounter } from './helpers.js';
 
 const db = getFirestore();
 
@@ -57,26 +57,59 @@ function toggleTaskStatus(e) {
 }
 
 function removeTask(rowChild) {
-  const task = rowChild.closest('li.task-row');
+  // remove predefined height for it to follow content height smoothly
+  const container = document.getElementById('tasks-container');
+  container.style.height = '';
 
+  const task = rowChild.closest('li.task-row');
   deleteDoc(doc(db, 'todo-items', task.dataset.id));
 
-  task.classList.add('throw-left-animation');
-  setTimeout(() => {
-    task.remove();
-    updateContainerHeight();
-  }, 500);
+  replaceTaskWithPlaceholder(task);
+  animateTaskDeletion(task);
+  setTimeout(() => task.remove(), 500);
+  setTimeout(
+    () => (container.style.height = container.getBoundingClientRect().height),
+    1000
+  );
 
-  updateCounter();
+  updateCounter(1);
+}
+
+function replaceTaskWithPlaceholder(task) {
+  const rect = task.getBoundingClientRect();
+  const placeholder = document.createElement('li');
+
+  task.style.top = rect.top + 'px';
+  task.style.left = rect.left + 'px';
+  task.style.width = rect.width + 'px';
+
+  placeholder.className = 'task-deletion-placeholder';
+  placeholder.style.height = rect.height + 'px';
+
+  task.replaceWith(placeholder);
+  setTimeout(() => placeholder.classList.add('shrink-animation'));
+  setTimeout(() => placeholder.remove(), 1000);
+
+  document.body.append(task);
+  task.style.position = 'fixed';
+}
+
+function animateTaskDeletion(task) {
+  setTimeout(() => task.classList.add('opace-animation'));
 }
 
 function removeCompletedTasks() {
   event.preventDefault();
 
+  let deletedTasksNumber = 0;
+
   const checkboxes = document.querySelectorAll('.checkbox');
   checkboxes.forEach((checkbox) => {
-    if (checkbox.classList.contains('checked')) removeTask(checkbox);
+    if (checkbox.classList.contains('checked')) {
+      removeTask(checkbox);
+      deletedTasksNumber++;
+    }
   });
 
-  updateCounter();
+  updateCounter(deletedTasksNumber);
 }

@@ -1,3 +1,9 @@
 .drag-message {
+  margin-top: 20px;
   height: 6rem;
+}
+
+.drag-message p {
+  color: $light4;
+  font-weight: $font-bold;
 }

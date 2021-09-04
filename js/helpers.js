@@ -9,7 +9,17 @@ export function updateContainerHeight() {
   setTimeout(() => (container.style.height = listHeight + 4 + 'px'));
 }
 
-export function updateCounter() {
+export function updateCounter(preDeleteNumber) {
   const taskCount = document.querySelectorAll('.task-row:not(.hidden)').length;
+
+  // preDeletedNumber us used when deleting tasks
+  // because removal happens with timeout
+  if (preDeleteNumber) {
+    document.getElementById('tasks-left').innerHTML = `${
+      taskCount - preDeleteNumber
+    } items left`;
+    return;
+  }
+
   document.getElementById('tasks-left').innerHTML = `${taskCount} items left`;
 }

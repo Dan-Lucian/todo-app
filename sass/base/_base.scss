@@ -93,6 +93,7 @@ img {
 }
 
 button {
+  cursor: pointer;
   background: none;
   border: none;
   font-weight: $font-bold;
@@ -118,7 +119,14 @@ button:focus {
   display: none !important;
 }
 
-.throw-left-animation {
-  transition: transform 400ms ease-in-out !important;
-  transform: translateX(-1000px) !important;
+.opace-animation {
+  transition: opacity 200ms ease-in-out !important;
+  opacity: 0 !important;
+}
+
+.shrink-animation {
+  transition: height 500ms ease-in-out !important;
+  transition-delay: 200ms !important;
+  height: 0 !important;
+  padding: 0 !important;
 }

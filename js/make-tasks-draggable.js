@@ -171,7 +171,6 @@ export function makeTasksDraggable() {
 
     // if placeholder exists means that an element was lifted
     if (placeholder.classList.contains('task-row')) {
-      console.log('is placeholder');
       swapOrder(draggable, placeholder);
 
       placeholder.replaceWith(draggable);
@@ -182,31 +181,19 @@ export function makeTasksDraggable() {
 }
 
 function swapOrder(draggable, placeholder) {
-  console.log(placeholder);
-
   const previous = placeholder.previousElementSibling;
   const next = placeholder.nextElementSibling;
 
   if (!previous) {
     const order = +next.dataset.order / 2;
 
-    if (isNaN(order)) {
-      console.log('is nan');
-    }
-    console.log('no start: ' + order);
-
     draggable.dataset.order = order;
     updateDbOrder(order, draggable.dataset.id);
     return;
   }
 
-  if (next.classList.contains('tasks-status')) {
+  if (!next) {
     const order = +previous.dataset.order + 1;
-
-    if (isNaN(order)) {
-      console.log('is nan');
-    }
-    console.log('no end: ' + order);
 
     draggable.dataset.order = order;
     updateDbOrder(order, draggable.dataset.id);
@@ -216,11 +203,6 @@ function swapOrder(draggable, placeholder) {
   const previousOrder = +previous.dataset.order;
   const nextOrder = +next.dataset.order;
   const order = (previousOrder + nextOrder) / 2;
-
-  if (isNaN(order)) {
-    console.log('is nan');
-  }
-  console.log('all right: ' + order);
 
   draggable.dataset.order = order;
   updateDbOrder(order, draggable.dataset.id);

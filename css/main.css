@@ -424,6 +424,7 @@ img {
 }
 
 button {
+  cursor: pointer;
   background: none;
   border: none;
   font-weight: 700;
@@ -449,9 +450,16 @@ button:focus {
   display: none !important;
 }
 
-.throw-left-animation {
-  transition: transform 400ms ease-in-out !important;
-  transform: translateX(-1000px) !important;
+.opace-animation {
+  transition: opacity 200ms ease-in-out !important;
+  opacity: 0 !important;
+}
+
+.shrink-animation {
+  transition: height 500ms ease-in-out !important;
+  transition-delay: 200ms !important;
+  height: 0 !important;
+  padding: 0 !important;
 }
 
 h1,
@@ -617,8 +625,15 @@ button.theme img {
   justify-content: space-between;
   align-items: center;
 }
+.task-row.notransition {
+  transition: none;
+}
 .task-row.task-placeholder {
   background-color: var(--elem-placeholder-bg);
+}
+
+.task-deletion-placeholder {
+  background-color: transparent !important;
 }
 
 .task-row:hover {
@@ -642,7 +657,6 @@ button.theme img {
 .task {
   margin-left: 0.6em;
   transform: translateY(2px);
-  cursor: pointer;
   flex-grow: 1;
 }
 
@@ -706,17 +720,18 @@ button.theme img {
   margin: 0;
 }
 
-.drag-message p {
-  color: #9394a5;
-  font-weight: 700;
-}
-
 .input::placeholder {
   color: #9394a5;
 }
 
 .drag-message {
+  margin-top: 20px;
   height: 6rem;
+}
+
+.drag-message p {
+  color: #9394a5;
+  font-weight: 700;
 }
 
 .btn {
@@ -744,11 +759,6 @@ button.theme img {
 .btn--secondary:hover, .btn--secondary:focus {
   background: #f00;
   color: #fff;
-}
-
-#img-theme {
-  border: none;
-  outline: none;
 }
 
 /*# sourceMappingURL=main.css.map */
