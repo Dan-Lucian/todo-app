@@ -64,9 +64,10 @@ function removeTask(rowChild) {
   const task = rowChild.closest('li.task-row');
   deleteDoc(doc(db, 'todo-items', task.dataset.id));
 
-  replaceTaskWithPlaceholder(task);
   animateTaskDeletion(task);
-  setTimeout(() => task.remove(), 500);
+  replaceTaskWithPlaceholder(task);
+
+  // rewrite container height for addition/filtering animations to work
   setTimeout(
     () => (container.style.height = container.getBoundingClientRect().height),
     1000
@@ -79,23 +80,20 @@ function replaceTaskWithPlaceholder(task) {
   const rect = task.getBoundingClientRect();
   const placeholder = document.createElement('li');
 
-  task.style.top = rect.top + 'px';
-  task.style.left = rect.left + 'px';
-  task.style.width = rect.width + 'px';
-
+  // 2px for the margin
+  placeholder.style.height = rect.height + 2 + 'px';
   placeholder.className = 'task-deletion-placeholder';
-  placeholder.style.height = rect.height + 'px';
 
-  task.replaceWith(placeholder);
-  setTimeout(() => placeholder.classList.add('shrink-animation'));
+  setTimeout(() => {
+    task.replaceWith(placeholder);
+    setTimeout(() => placeholder.classList.add('shrink-animation'), 5);
+  }, 200);
+
   setTimeout(() => placeholder.remove(), 1000);
-
-  document.body.append(task);
-  task.style.position = 'fixed';
 }
 
 function animateTaskDeletion(task) {
-  setTimeout(() => task.classList.add('opace-animation'));
+  setTimeout(() => task.classList.add('throw-animation'));
 }
 
 function removeCompletedTasks() {

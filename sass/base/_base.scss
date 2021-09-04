@@ -119,14 +119,13 @@ button:focus {
   display: none !important;
 }
 
-.opace-animation {
-  transition: opacity 200ms ease-in-out !important;
-  opacity: 0 !important;
-}
-
 .shrink-animation {
-  transition: height 500ms ease-in-out !important;
-  transition-delay: 200ms !important;
+  transition: height 300ms ease-in-out !important;
   height: 0 !important;
   padding: 0 !important;
+}
+
+.throw-animation {
+  transition: transform 200ms ease-in-out !important;
+  transform: translateX(-110%) !important;
 }
