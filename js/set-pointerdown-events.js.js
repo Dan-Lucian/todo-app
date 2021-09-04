@@ -16,19 +16,21 @@ export function setBigContainerPointerdownEvents() {
     .getElementById('tasks-container')
     .addEventListener('pointerdown', pointerDownFunc);
 
+  document.getElementById('tasks-container').oncontextmenu = makeTasksDraggable;
+
   document.getElementById('button-theme').onpointerdown = changeTheme;
   document.getElementById('tasks-clear').onpointerdown = removeCompletedTasks;
 }
 
 function pointerDownFunc(e) {
+  e.preventDefault();
+
   if (e.target.closest('.checkbox')) {
-    e.preventDefault();
     toggleTaskStatus(e);
     return;
   }
 
   if (e.target.closest('.cross-icon')) {
-    e.preventDefault();
     removeTask(e.target);
     return;
   }
