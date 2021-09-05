@@ -25,13 +25,6 @@
 
     <!-- My Script -->
     <script defer type="module" src="js/main.js"></script>
-
-    <!-- Font Awesome 5 -->
-    <script
-      defer
-      src="https://kit.fontawesome.com/40d9bdd65d.js"
-      crossorigin="anonymous"
-    ></script>
   </head>
 
   <body>
@@ -83,7 +76,8 @@
 
         <!-- list body -->
         <div style="height: 0" class="tasks-container" id="tasks-container">
-          <ul class="unstyled-list task-list" id="task-list"></ul>
+          <ul class="unstyled-list task-list" id="task-list">
+          </ul>
         </div>
 
         <div class="tasks-status">
@@ -99,7 +93,9 @@
             <li><button id="tasks-completed">Completed</button></li>
           </ul>
         </div>
-        <div class="drag-message"><p>Press and hold a task to drag & drop</p></div>
+        <div class="drag-message">
+          <p>Press and hold a task to drag & drop</p>
+        </div>
       </div>
     </main>
   </body>

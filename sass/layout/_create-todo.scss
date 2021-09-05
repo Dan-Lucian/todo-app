@@ -10,30 +10,6 @@
   margin-bottom: 0.6em;
 }
 
-button.theme {
-  display: flex;
-  align-items: center;
-  margin: 0;
-  padding: 0;
-  color: inherit;
-  font-size: 2rem;
-
-  &:focus,
-  &:active {
-    color: $light1;
-    border: none;
-    outline: none;
-  }
-
-  &:hover{
-    opacity: 0.8;
-  }
-
-  img {
-    margin-left: 1rem;
-  }
-}
-
 .title {
   display: flex;
   align-items: center;

@@ -45,6 +45,8 @@ function insertTask(inputValue, id, status, order) {
 
   const insertCheckedClass = status === 'active' ? '' : ' checked';
   const insertHiddenClass = status === 'active' ? ' hidden' : '';
+  const insertMobileArrowIcon =
+    window.innerWidth < 420 ? '<div class="lift-release-icon"></div>' : '';
 
   taskList.insertAdjacentHTML(
     'afterbegin',
@@ -57,9 +59,8 @@ function insertTask(inputValue, id, status, order) {
         </div>
         <div class="task">${inputValue}</div>
       </div>
-      <div class="cross-icon">
-        <img width="18px" height="18px" src="img/icon-cross.svg" alt="cross icon" />
-      </div>
+      ${insertMobileArrowIcon}
+      <div class="cross-icon"></div>
     </li>`
   );
 

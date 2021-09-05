@@ -525,26 +525,6 @@ header div img {
   margin-bottom: 0.6em;
 }
 
-button.theme {
-  display: flex;
-  align-items: center;
-  margin: 0;
-  padding: 0;
-  color: inherit;
-  font-size: 2rem;
-}
-button.theme:focus, button.theme:active {
-  color: #fafafa;
-  border: none;
-  outline: none;
-}
-button.theme:hover {
-  opacity: 0.8;
-}
-button.theme img {
-  margin-left: 1rem;
-}
-
 .title {
   display: flex;
   align-items: center;
@@ -644,18 +624,6 @@ button.theme img {
   background-color: transparent !important;
 }
 
-.task-row:hover,
-.task-row:focus,
-.simulated-hover {
-  transform: translateY(-2px);
-  box-shadow: 0 0 7px 0 rgba(22, 23, 34, 0.5);
-}
-.task-row:hover .cross-icon,
-.task-row:focus .cross-icon,
-.simulated-hover .cross-icon {
-  opacity: 1;
-}
-
 .task-container {
   display: flex;
   align-items: center;
@@ -670,15 +638,6 @@ button.theme img {
   margin-left: 0.6em;
   transform: translateY(2px);
   flex-grow: 1;
-}
-
-.cross-icon {
-  min-height: 1em;
-  height: 1em;
-  min-width: 1em;
-  opacity: 0;
-  cursor: pointer;
-  transition: opacity 200ms ease-in-out;
 }
 
 .tasks-status {
@@ -744,6 +703,79 @@ button.theme img {
 .drag-message p {
   color: #9394a5;
   font-weight: 700;
+}
+
+.theme {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  color: inherit;
+  font-size: 2rem;
+}
+.theme:focus, .theme:active {
+  color: #fafafa;
+  border: none;
+  outline: none;
+}
+.theme:hover {
+  opacity: 0.8;
+}
+.theme img {
+  margin-left: 15px;
+}
+.theme span {
+  display: none;
+}
+@media screen and (min-width: 420px) {
+  .theme span {
+    display: inline;
+  }
+}
+
+.lift-release-icon {
+  background-image: url(/img/arrow-up.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 60px;
+  min-height: 25px;
+  height: 25px;
+  min-width: 25px;
+  cursor: pointer;
+  transition: opacity 200ms ease-in-out;
+  opacity: 0;
+}
+
+.cross-icon {
+  background-image: url(/img/cross-icon.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 25px;
+  height: 25px;
+  min-width: 25px;
+  opacity: 0;
+  cursor: pointer;
+  transition: opacity 200ms ease-in-out;
+}
+
+.task-row:hover,
+.task-row:focus,
+.simulated-hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 7px 0 rgba(22, 23, 34, 0.5);
+}
+.task-row:hover .cross-icon,
+.task-row:hover .lift-release-icon,
+.task-row:focus .cross-icon,
+.task-row:focus .lift-release-icon,
+.simulated-hover .cross-icon,
+.simulated-hover .lift-release-icon {
+  opacity: 1;
+}
+
+.rotate-180 {
+  transform: rotate(180deg) translateY(1px);
 }
 
 .btn {

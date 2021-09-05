@@ -32,9 +32,13 @@ function pointerDownFunc(e) {
 
   // remove task if press on cross icon
   if (e.target.closest('.cross-icon')) {
-    console.log('cross pressed');
+    removeTask(e.target);
+    return;
+  }
+
+  if (e.target.closest('.lift-release-icon')) {
+    console.log('task lifted');
     makeMobileDraggable();
-    // removeTask(e.target);
     return;
   }
 

@@ -20,6 +20,9 @@ export function makeMobileDraggable() {
     return false;
   };
 
+  const arrow = event.target;
+  arrow.classList.add('rotate-180');
+
   // get shift coords and dimensions
   const draggableRect = draggable.getBoundingClientRect();
   const shiftX = event.clientX - draggableRect.left;
@@ -52,7 +55,7 @@ export function makeMobileDraggable() {
   // pointerdown because elem taken outside of container handler
   draggable.addEventListener('pointerdown', onPointerDown);
   function onPointerDown(e) {
-    if (e.target === e.currentTarget.querySelector('.cross-icon img')) {
+    if (e.target === e.currentTarget.querySelector('.lift-release-icon')) {
       console.log('swap order');
       swapOrder(draggable, placeholder);
 
@@ -60,12 +63,12 @@ export function makeMobileDraggable() {
       placeholder.remove();
       draggable.style.cssText = '';
       draggable.classList.remove('remove-touch-action');
+      arrow.classList.remove('rotate-180');
 
       document.removeEventListener('pointermove', onPointerMove);
       draggable.removeEventListener('pointerup', onPointerUp);
       draggable.removeEventListener('pointerdown', onPointerDown);
 
-      draggingOtherTask = false;
       return;
     }
 
