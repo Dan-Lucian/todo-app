@@ -7,6 +7,7 @@ import {
 
 import { changeTheme } from './change-theme.js';
 import { makeTasksDraggable } from './make-tasks-draggable.js';
+import { makeMobileDraggable } from './mobile-draggable.js';
 import { updateCounter } from './helpers.js';
 
 const db = getFirestore();
@@ -16,8 +17,6 @@ export function setBigContainerPointerdownEvents() {
     .getElementById('tasks-container')
     .addEventListener('pointerdown', pointerDownFunc);
 
-  document.getElementById('tasks-container').oncontextmenu = makeTasksDraggable;
-
   document.getElementById('button-theme').onpointerdown = changeTheme;
   document.getElementById('tasks-clear').onpointerdown = removeCompletedTasks;
 }
@@ -25,13 +24,23 @@ export function setBigContainerPointerdownEvents() {
 function pointerDownFunc(e) {
   e.preventDefault();
 
+  // check box if press on checkbox
   if (e.target.closest('.checkbox')) {
     toggleTaskStatus(e);
     return;
   }
 
+  // remove task if press on cross icon
   if (e.target.closest('.cross-icon')) {
-    removeTask(e.target);
+    console.log('cross pressed');
+    makeMobileDraggable();
+    // removeTask(e.target);
+    return;
+  }
+
+  // simulate hover state in case of mobile
+  if (window.innerWidth < 420) {
+    simulateHoverState(e);
     return;
   }
 
@@ -112,4 +121,17 @@ function removeCompletedTasks() {
   });
 
   updateCounter(deletedTasksNumber);
+}
+
+function simulateHoverState(e) {
+  const hovered = e.currentTarget.querySelector('.simulated-hover');
+  const task = e.target.closest('.task-row');
+
+  // unhover earlier hovered elem
+  if (hovered) hovered.classList.remove('simulated-hover');
+
+  // if this elem already hovered
+  if (hovered === task) return;
+
+  task.classList.toggle('simulated-hover');
 }

@@ -129,3 +129,7 @@ button:focus {
   transition: transform 200ms ease-in-out !important;
   transform: translateX(-110%) !important;
 }
+
+.remove-touch-action {
+  touch-action: none;
+}

@@ -38,7 +38,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  touch-action: none;
 
   &.notransition {
     transition: none;
@@ -54,7 +53,8 @@
 }
 
 .task-row:hover,
-.task-row:focus {
+.task-row:focus, 
+.simulated-hover {
   transform: translateY(-2px);
   box-shadow: 0 0 7px 0 rgba(22, 23, 34, 0.5);
 

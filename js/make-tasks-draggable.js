@@ -74,6 +74,8 @@ export function makeTasksDraggable() {
     let left = event.pageX - shiftX;
     let top = event.pageY - shiftY;
 
+    // you already have height/width
+    // refactor here
     const elemHeight = draggable.offsetHeight;
     const elemWidth = draggable.offsetWidth;
     const scrollTop = document.documentElement.scrollTop;
