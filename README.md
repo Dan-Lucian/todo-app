@@ -2,6 +2,7 @@
  
 Features
 * The list is saved on Firebase.
+* Single page app, no loading after the initial load.
 * Drag & drop functionality for both mobile and desktop.
 * To do tasks order is saved and updated when changing.
 * Dark and Light theme.
