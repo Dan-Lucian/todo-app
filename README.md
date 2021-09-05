@@ -11,7 +11,7 @@ Features
 * Animations for every action, no abrupt jumps.
 
 Cons
-* Only 1 user and only 1 task list.
+* Only 1 user and only 1 task list, built only for myself.
 * Not so light animations which can cause stutter on low-end mobile phones.
 * No server side preloading or server side optimizations.
 * May be some uncaught bugs.
