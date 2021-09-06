@@ -11,9 +11,7 @@ const db = getFirestore();
 generateList();
 
 async function generateList() {
-  console.log('request for collection sent: ' + performance.now());
   const querySnapshot = await getDocs(collection(db, 'todo-items'));
-  console.log('request for collection received: ' + performance.now());
 
   const arrTasks = extractData(querySnapshot);
   arrTasks
@@ -46,7 +44,9 @@ function insertTask(inputValue, id, status, order) {
   const insertCheckedClass = status === 'active' ? '' : ' checked';
   const insertHiddenClass = status === 'active' ? ' hidden' : '';
   const insertMobileArrowIcon =
-    window.innerWidth < 420 ? '<div class="lift-release-icon"></div>' : '';
+    window.innerWidth < 420
+      ? '<div class="lift-release-icon" aria-label="move a task"></div>'
+      : '';
 
   taskList.insertAdjacentHTML(
     'afterbegin',
@@ -60,7 +60,7 @@ function insertTask(inputValue, id, status, order) {
         <div class="task">${inputValue}</div>
       </div>
       ${insertMobileArrowIcon}
-      <div class="cross-icon"></div>
+      <div aria-label="remove task" class="cross-icon"></div>
     </li>`
   );
 

@@ -1,9 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-  <script>
-    console.log('document exists: ' + performance.now());
-  </script>
-
   <head>
     <meta charset="UTF-8" />
     <meta
@@ -14,6 +10,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Todo web app</title>
+
+    <link rel="preload" href="img/bg-mobile-light.jpg" as="image">
 
     <!-- theme sript -->
     <script src="js/preload-theme.js"></script>
@@ -49,7 +47,11 @@
         <!-- top image and text -->
         <div class="header">
           <div class="title" id="button">TODO</div>
-          <button class="theme" id="button-theme">
+          <button
+            aria-label="change color theme"
+            class="theme"
+            id="button-theme"
+          >
             <span>Change Theme</span>
             <img
               src="img/icon-moon.svg"
@@ -85,15 +87,31 @@
 
         <div class="tasks-status">
           <div class="tasks-left" id="tasks-left">0 items left</div>
-          <button class="tasks-clear" id="tasks-clear">Remove Completed</button>
+          <button
+            aria-label="remove selected tasks"
+            class="tasks-clear"
+            id="tasks-clear"
+          >
+            Remove Completed
+          </button>
         </div>
 
         <!-- tasks filter -->
         <div class="tasks-filter" id="tasks-filter">
           <ul class="unstyled-list">
-            <li><button id="tasks-all">All</button></li>
-            <li><button id="tasks-active">Active</button></li>
-            <li><button id="tasks-completed">Completed</button></li>
+            <li>
+              <button aria-label="show all taks" id="tasks-all">All</button>
+            </li>
+            <li>
+              <button aria-label="show active taks" id="tasks-active">
+                Active
+              </button>
+            </li>
+            <li>
+              <button aria-label="show completed taks" id="tasks-completed">
+                Completed
+              </button>
+            </li>
           </ul>
         </div>
         <div class="drag-message">

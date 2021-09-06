@@ -64,6 +64,11 @@ async function addTextToDb(text) {
 
 function insertTask(inputValue) {
   const taskList = document.querySelector('.tasks-container ul');
+  const insertMobileArrowIcon =
+    window.innerWidth < 420
+      ? '<div class="lift-release-icon" aria-label="move a task"></div>'
+      : '';
+
   taskList.insertAdjacentHTML(
     'afterbegin',
     `<li class="task-row opace draggable" data-id="null" data-status="active" data-order="1">
@@ -73,9 +78,8 @@ function insertTask(inputValue) {
         </div>
         <div class="task">${inputValue}</div>
       </div>
-      <div class="cross-icon">
-        <img width="18px" height="18px" src="img/icon-cross.svg" alt="cross icon" />
-      </div>
+      ${insertMobileArrowIcon}
+      <div aria-label="remove task" class="cross-icon"></div>
     </li>`
   );
 
