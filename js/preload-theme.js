@@ -1,5 +1,6 @@
 // create or read the theme cookie
 
+console.log(document.body);
 setCookies();
 changeColorsByTheme();
 changeImgByTheme();
