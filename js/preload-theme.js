@@ -57,6 +57,7 @@ function changeImgByTheme() {
     switch (`${isCookieThemeLight}_` + `${window.innerWidth > 420}`) {
       case 'false_false':
         bg.src = 'img/bg-mobile-dark.jpg';
+        changeDragMessage();
         break;
 
       case 'false_true':
@@ -66,6 +67,7 @@ function changeImgByTheme() {
 
       case 'true_false':
         bg.src = 'img/bg-mobile-light.jpg';
+        changeDragMessage();
         break;
 
       case 'true_true':
@@ -88,5 +90,11 @@ function changeImgByTheme() {
     const tasksFilter = document.getElementById('tasks-filter');
     tasksFilter.remove();
     document.getElementById('tasks-left').after(tasksFilter);
+  }
+
+  function changeDragMessage() {
+    document.querySelector(
+      '.drag-message p'
+    ).innerHTML = `Press arrow up icon to change a task's order`;
   }
 }

@@ -28,6 +28,8 @@
 }
 
 .task-row {
+  position: relative;
+  overflow: hidden;
   text-align: left;
   color: var(--elem-text-color);
   opacity: 1;

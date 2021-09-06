@@ -602,6 +602,8 @@ header div img {
 }
 
 .task-row {
+  position: relative;
+  overflow: hidden;
   text-align: left;
   color: var(--elem-text-color);
   opacity: 1;
@@ -743,8 +745,8 @@ header div img {
   height: 25px;
   min-width: 25px;
   cursor: pointer;
-  transition: opacity 200ms ease-in-out;
-  opacity: 0;
+  transform: translateY(100px);
+  transition: transform 200ms ease-in-out;
 }
 
 .cross-icon {
@@ -754,24 +756,32 @@ header div img {
   min-height: 25px;
   height: 25px;
   min-width: 25px;
-  opacity: 0;
   cursor: pointer;
-  transition: opacity 200ms ease-in-out;
+  transform: translateY(100px);
+  transition: transform 200ms ease-in-out;
 }
 
-.task-row:hover,
-.task-row:focus,
 .simulated-hover {
   transform: translateY(-2px);
   box-shadow: 0 0 7px 0 rgba(22, 23, 34, 0.5);
 }
-.task-row:hover .cross-icon,
-.task-row:hover .lift-release-icon,
-.task-row:focus .cross-icon,
-.task-row:focus .lift-release-icon,
 .simulated-hover .cross-icon,
 .simulated-hover .lift-release-icon {
-  opacity: 1;
+  transform: translateY(0);
+}
+
+@media screen and (min-width: 420px) {
+  .task-row:hover,
+.task-row:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 0 7px 0 rgba(22, 23, 34, 0.5);
+  }
+  .task-row:hover .cross-icon,
+.task-row:hover .lift-release-icon,
+.task-row:focus .cross-icon,
+.task-row:focus .lift-release-icon {
+    transform: translateY(0);
+  }
 }
 
 .rotate-180 {

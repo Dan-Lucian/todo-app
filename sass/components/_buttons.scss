@@ -42,8 +42,8 @@
   height: 25px;
   min-width: 25px;
   cursor: pointer;
-  transition: opacity 200ms ease-in-out;
-  opacity: 0;
+  transform: translateY(100px);
+  transition: transform 200ms ease-in-out;
 }
 
 .cross-icon {
@@ -53,20 +53,31 @@
   min-height: 25px;
   height: 25px;
   min-width: 25px;
-  opacity: 0;
   cursor: pointer;
-  transition: opacity 200ms ease-in-out;
+  transform: translateY(100px);
+  transition: transform 200ms ease-in-out;
 }
 
-.task-row:hover,
-.task-row:focus,
 .simulated-hover {
   transform: translateY(-2px);
   box-shadow: 0 0 7px 0 rgba(22, 23, 34, 0.5);
 
   & .cross-icon,
   .lift-release-icon {
-    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.task-row:hover,
+.task-row:focus {
+  @media screen and (min-width: 420px) {
+    transform: translateY(-2px);
+    box-shadow: 0 0 7px 0 rgba(22, 23, 34, 0.5);
+
+    & .cross-icon,
+    .lift-release-icon {
+      transform: translateY(0);
+    }
   }
 }
 

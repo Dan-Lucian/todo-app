@@ -36,6 +36,11 @@ export function makeTasksDraggable() {
 
     // append to body for coords to work correctly + absolute
     document.body.append(draggable);
+
+    draggable.style.width = width + 'px';
+    draggable.style.height = height + 'px';
+    draggable.style.left = left;
+    draggable.style.top = top;
     draggable.style.position = 'absolute';
   }, 300);
 
@@ -48,12 +53,8 @@ export function makeTasksDraggable() {
   const shiftY = event.clientY - draggableRect.top;
   const width = draggableRect.width;
   const height = draggableRect.height;
-
-  // these styles won't affect the element if position absolute won't be set
-  draggable.style.left = event.pageX - shiftX + 'px';
-  draggable.style.top = event.pageY - shiftY + 'px';
-  draggable.style.width = width + 'px';
-  draggable.style.height = height + 'px';
+  const left = event.pageX - shiftX + 'px';
+  const top = event.pageY - shiftY + 'px';
 
   // measure once draggable and remember it's coords
   // then check for mouse leaving those boundaries
