@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -7,7 +7,7 @@
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 html {
-  font-family: "Josefin Sans", sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
   line-height: 1.6;
   /* 1 */
   -webkit-text-size-adjust: 100%;
@@ -189,9 +189,9 @@ select {
  * Correct the inability to style clickable types in iOS and Safari.
  */
 button,
-[type=button],
-[type=reset],
-[type=submit] {
+[type='button'],
+[type='reset'],
+[type='submit'] {
   -webkit-appearance: button;
 }
 
@@ -199,9 +199,9 @@ button,
  * Remove the inner border and padding in Firefox.
  */
 button::-moz-focus-inner,
-[type=button]::-moz-focus-inner,
-[type=reset]::-moz-focus-inner,
-[type=submit]::-moz-focus-inner {
+[type='button']::-moz-focus-inner,
+[type='reset']::-moz-focus-inner,
+[type='submit']::-moz-focus-inner {
   border-style: none;
   padding: 0;
 }
@@ -210,9 +210,9 @@ button::-moz-focus-inner,
  * Restore the focus styles unset by the previous rule.
  */
 button:-moz-focusring,
-[type=button]:-moz-focusring,
-[type=reset]:-moz-focusring,
-[type=submit]:-moz-focusring {
+[type='button']:-moz-focusring,
+[type='reset']:-moz-focusring,
+[type='submit']:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
 
@@ -262,8 +262,8 @@ textarea {
  * 1. Add the correct box sizing in IE 10.
  * 2. Remove the padding in IE 10.
  */
-[type=checkbox],
-[type=radio] {
+[type='checkbox'],
+[type='radio'] {
   box-sizing: border-box;
   /* 1 */
   padding: 0;
@@ -273,8 +273,8 @@ textarea {
 /**
  * Correct the cursor style of increment and decrement buttons in Chrome.
  */
-[type=number]::-webkit-inner-spin-button,
-[type=number]::-webkit-outer-spin-button {
+[type='number']::-webkit-inner-spin-button,
+[type='number']::-webkit-outer-spin-button {
   height: auto;
 }
 
@@ -282,7 +282,7 @@ textarea {
  * 1. Correct the odd appearance in Chrome and Safari.
  * 2. Correct the outline style in Safari.
  */
-[type=search] {
+[type='search'] {
   -webkit-appearance: textfield;
   /* 1 */
   outline-offset: -2px;
@@ -292,7 +292,7 @@ textarea {
 /**
  * Remove the inner padding in Chrome and Safari on macOS.
  */
-[type=search]::-webkit-search-decoration {
+[type='search']::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -367,7 +367,10 @@ html.dark {
   --elem-placeholder-bg: rgba(37, 39, 60, 0.4);
 }
 
-html.transition, html.transition *, html.transition *:before, html.transition *:after {
+html.transition,
+html.transition *,
+html.transition *:before,
+html.transition *:after {
   transition: all 200ms !important;
   transition-delay: 0s !important;
 }
@@ -715,7 +718,8 @@ button:focus {
   color: inherit;
   font-size: 2rem;
 }
-.theme:focus, .theme:active {
+.theme:focus,
+.theme:active {
   color: #fafafa;
   border: none;
   outline: none;
@@ -737,7 +741,7 @@ button:focus {
 }
 
 .lift-release-icon {
-  background-image: url(../img/arrow-up.svg);
+  background-image: url(./img/arrow-up.svg);
   background-position: center;
   background-repeat: no-repeat;
   position: absolute;
@@ -775,14 +779,14 @@ button:focus {
 
 @media screen and (min-width: 420px) {
   .task-row:hover,
-.task-row:focus {
+  .task-row:focus {
     transform: translateY(-2px);
     box-shadow: 0 0 7px 0 rgba(22, 23, 34, 0.5);
   }
   .task-row:hover .cross-icon,
-.task-row:hover .lift-release-icon,
-.task-row:focus .cross-icon,
-.task-row:focus .lift-release-icon {
+  .task-row:hover .lift-release-icon,
+  .task-row:focus .cross-icon,
+  .task-row:focus .lift-release-icon {
     transform: translateY(0);
   }
 }
@@ -804,7 +808,8 @@ button:focus {
   border: 2px solid #f00;
   color: #fff;
 }
-.btn--primary:hover, .btn--primary:focus {
+.btn--primary:hover,
+.btn--primary:focus {
   background: #b30000;
   border-color: #b30000;
 }
@@ -813,7 +818,8 @@ button:focus {
   border: 2px solid #f00;
   color: #f00;
 }
-.btn--secondary:hover, .btn--secondary:focus {
+.btn--secondary:hover,
+.btn--secondary:focus {
   background: #f00;
   color: #fff;
 }
