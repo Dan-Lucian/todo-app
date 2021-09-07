@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="A todo web application (web app), synced with Firestore Firebase, organize your tasks with a cloud synced list, portfolio project example"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Todo web app</title>
+
+    <link rel="preload" href="img/bg-mobile-light.jpg" as="image" />
+
+    <!-- theme sript -->
+    <script async src="js/preload-theme.js"></script>
+
+    <!-- Initialize Firebase -->
+    <script defer type="module" src="js/firebase-config.js"></script>
+
+    <!-- preload-todo-items -->
+    <script defer type="module" src="js/preload-todo-items.js"></script>
+
+    <!-- main stylesheet -->
+    <link rel="stylesheet" href="css/main-minified.css" />
+
+    <!-- My Script -->
+    <script defer type="module" src="js/main.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <div>
+        <img
+          id="background-image"
+          src="img/bg-mobile-light.jpg"
+          alt="background image"
+          height="200px"
+          width="500px"
+        />
+      </div>
+    </header>
+
+    <main>
+      <div class="big-container">
+        <!-- top image and text -->
+        <div class="header">
+          <div class="title" id="button">TODO</div>
+          <button
+            aria-label="change color theme"
+            class="theme"
+            id="button-theme"
+          >
+            <span>Change Theme</span>
+            <img
+              src="img/icon-moon.svg"
+              alt=""
+              id="img-theme"
+              width="25px"
+              height="25px"
+            />
+          </button>
+        </div>
+
+        <!-- top input -->
+        <div class="create-todo">
+          <div class="checkbox"></div>
+          <div class="input-container">
+            <form action="#" id="form">
+              <input
+                type="text"
+                name="input"
+                id="input"
+                class="input"
+                placeholder="Create a new todo..."
+              />
+              <span class="focus-border"></span>
+            </form>
+          </div>
+        </div>
+
+        <!-- list body -->
+        <div style="height: 0" class="tasks-container" id="tasks-container">
+          <ul class="unstyled-list task-list" id="task-list"></ul>
+        </div>
+
+        <div class="tasks-status">
+          <div class="tasks-left" id="tasks-left">0 items left</div>
+          <button
+            aria-label="remove selected tasks"
+            class="tasks-clear"
+            id="tasks-clear"
+          >
+            Remove Completed
+          </button>
+        </div>
+
+        <!-- tasks filter -->
+        <div class="tasks-filter" id="tasks-filter">
+          <ul class="unstyled-list">
+            <li>
+              <button aria-label="show all taks" id="tasks-all">All</button>
+            </li>
+            <li>
+              <button aria-label="show active taks" id="tasks-active">
+                Active
+              </button>
+            </li>
+            <li>
+              <button aria-label="show completed taks" id="tasks-completed">
+                Completed
+              </button>
+            </li>
+          </ul>
+        </div>
+        <div class="drag-message">
+          <p>Press and hold a task to drag & drop</p>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
