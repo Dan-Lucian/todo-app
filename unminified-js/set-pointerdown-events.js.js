@@ -84,7 +84,7 @@ function removeTask(rowChild) {
 
   // rewrite container height for addition/filtering animations to work
   setTimeout(
-    () => (container.style.height = container.getBoundingClientRect().height),
+    () => (container.style.height = container.getBoundingClientRect().height + 'px'),
     1000
   );
 
