@@ -78,11 +78,11 @@ function changeImgByTheme() {
 
   function changeImgTheme(isCookieThemeLight) {
     if (isCookieThemeLight) {
-      document.getElementById('img-theme').src = '/img/icon-moon.svg';
+      document.getElementById('img-theme').src = '/todo-app/img/icon-moon.svg';
       return;
     }
 
-    document.getElementById('img-theme').src = '/img/icon-sun.svg';
+    document.getElementById('img-theme').src = '/todo-app/img/icon-sun.svg';
   }
 
   function mergeButtons() {
