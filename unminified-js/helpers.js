@@ -6,7 +6,7 @@ export function updateContainerHeight() {
     .getBoundingClientRect().height;
 
   // 4 px for the top/bottom margins
-  setTimeout(() => (container.style.height = listHeight + 4 + 'px'));
+  setTimeout(() => (container.style.height = listHeight + 4 + 'px'), 100);
 }
 
 export function updateCounter(preDeleteNumber) {
