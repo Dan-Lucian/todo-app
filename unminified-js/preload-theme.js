@@ -55,22 +55,22 @@ function changeImgByTheme() {
 
     switch (`${isCookieThemeLight}_` + `${window.innerWidth > 420}`) {
       case 'false_false':
-        bg.src = 'img/bg-mobile-dark.jpg';
+        bg.src = 'img/bg-mobile-dark.webp';
         changeDragMessage();
         break;
 
       case 'false_true':
-        bg.src = 'img/bg-desktop-dark.jpg';
+        bg.src = 'img/bg-desktop-dark.webp';
         mergeButtons();
         break;
 
       case 'true_false':
-        bg.src = 'img/bg-mobile-light.jpg';
+        bg.src = 'img/bg-mobile-light.webp';
         changeDragMessage();
         break;
 
       case 'true_true':
-        bg.src = 'img/bg-desktop-light.jpg';
+        bg.src = 'img/bg-desktop-light.webp';
         mergeButtons();
         break;
     }
