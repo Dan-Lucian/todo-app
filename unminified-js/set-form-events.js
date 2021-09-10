@@ -74,7 +74,7 @@ function insertTask(inputValue) {
     `<li class="task-row opace draggable" data-id="null" data-status="active" data-order="1">
       <div class="task-container">
         <div class="checkbox">
-          <img height="9px" width="11px" src="img/icon-check.svg" alt="check icon" class="hidden" />
+          <img height="9px" width="11px" src="/todo-app/img/icon-check.svg" alt="check icon" class="hidden" />
         </div>
         <div class="task">${inputValue}</div>
       </div>

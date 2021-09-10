@@ -55,22 +55,22 @@ function changeImgByTheme() {
 
     switch (`${isCookieThemeLight}_` + `${window.innerWidth > 420}`) {
       case 'false_false':
-        bg.src = 'img/bg-mobile-dark.webp';
+        bg.src = '/todo-app/img/bg-mobile-dark.webp';
         changeDragMessage();
         break;
 
       case 'false_true':
-        bg.src = 'img/bg-desktop-dark.webp';
+        bg.src = '/todo-app/img/bg-desktop-dark.webp';
         mergeButtons();
         break;
 
       case 'true_false':
-        bg.src = 'img/bg-mobile-light.webp';
+        bg.src = '/todo-app/img/bg-mobile-light.webp';
         changeDragMessage();
         break;
 
       case 'true_true':
-        bg.src = 'img/bg-desktop-light.webp';
+        bg.src = '/todo-app/img/bg-desktop-light.webp';
         mergeButtons();
         break;
     }

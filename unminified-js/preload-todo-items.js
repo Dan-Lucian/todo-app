@@ -55,7 +55,7 @@ function insertTask(inputValue, id, status, order) {
     )}" data-id="${id}" data-status="${status}" data-order="${order}">
       <div class="task-container">
         <div class="checkbox${insertCheckedClass}">
-          <img height="9px" width="11px" src="img/icon-check.svg" alt="check icon" class="${insertHiddenClass}"/>
+          <img height="9px" width="11px" src="/todo-app/img/icon-check.svg" alt="check icon" class="${insertHiddenClass}"/>
         </div>
         <div class="task">${inputValue}</div>
       </div>
