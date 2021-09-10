@@ -51,11 +51,7 @@
         <!-- top image and text -->
         <div class="header">
           <div class="title" id="button">TODO</div>
-          <button
-            aria-label="change color theme"
-            class="theme"
-            id="button-theme"
-          >
+          <button role="button" class="theme" id="button-theme">
             <span>Change Theme</span>
             <img
               src="/todo-app/img/icon-moon.svg"
@@ -91,11 +87,7 @@
 
         <div class="tasks-status">
           <div class="tasks-left" id="tasks-left">0 items left</div>
-          <button
-            aria-label="remove selected tasks"
-            class="tasks-clear"
-            id="tasks-clear"
-          >
+          <button role="button" class="tasks-clear" id="tasks-clear">
             Remove Completed
           </button>
         </div>
@@ -104,17 +96,13 @@
         <div class="tasks-filter" id="tasks-filter">
           <ul class="unstyled-list">
             <li>
-              <button aria-label="show all taks" id="tasks-all">All</button>
+              <button role="button" id="tasks-all">All</button>
             </li>
             <li>
-              <button aria-label="show active taks" id="tasks-active">
-                Active
-              </button>
+              <button role="button" id="tasks-active">Active</button>
             </li>
             <li>
-              <button aria-label="show completed taks" id="tasks-completed">
-                Completed
-              </button>
+              <button role="button" id="tasks-completed">Completed</button>
             </li>
           </ul>
         </div>
