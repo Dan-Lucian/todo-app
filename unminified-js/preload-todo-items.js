@@ -45,7 +45,7 @@ function insertTask(inputValue, id, status, order) {
   const insertHiddenClass = status === 'active' ? ' hidden' : '';
   const insertMobileArrowIcon =
     window.screen.width < 420
-      ? '<div class="lift-release-icon" aria-label="move a task"></div>'
+      ? '<div class="lift-release-icon" role="button" aria-pressed="false"></div>'
       : '';
 
   taskList.insertAdjacentHTML(
@@ -54,13 +54,13 @@ function insertTask(inputValue, id, status, order) {
       status
     )}" data-id="${id}" data-status="${status}" data-order="${order}">
       <div class="task-container">
-        <div class="checkbox${insertCheckedClass}">
+        <div role="checkbox" aria-checked="false" class="checkbox${insertCheckedClass}">
           <img height="9px" width="11px" src="/todo-app/img/icon-check.svg" alt="check icon" class="${insertHiddenClass}"/>
         </div>
         <div class="task">${inputValue}</div>
       </div>
       ${insertMobileArrowIcon}
-      <div aria-label="remove task" class="cross-icon"></div>
+      <div role="button" aria-pressed="false" class="cross-icon"></div>
     </li>`
   );
 

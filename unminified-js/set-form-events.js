@@ -66,20 +66,20 @@ function insertTask(inputValue) {
   const taskList = document.querySelector('.tasks-container ul');
   const insertMobileArrowIcon =
     window.screen.width < 420
-      ? '<div class="lift-release-icon" aria-label="move a task"></div>'
+      ? '<div class="lift-release-icon" role="button" aria-pressed="false"></div>'
       : '';
 
   taskList.insertAdjacentHTML(
     'afterbegin',
     `<li class="task-row opace draggable" data-id="null" data-status="active" data-order="1">
       <div class="task-container">
-        <div class="checkbox">
+        <div role="checkbox" aria-checked="false" class="checkbox">
           <img height="9px" width="11px" src="/todo-app/img/icon-check.svg" alt="check icon" class="hidden" />
         </div>
         <div class="task">${inputValue}</div>
       </div>
       ${insertMobileArrowIcon}
-      <div aria-label="remove task" class="cross-icon"></div>
+      <div role="button" aria-pressed="false" class="cross-icon"></div>
     </li>`
   );
 
