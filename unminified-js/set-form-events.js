@@ -65,7 +65,7 @@ async function addTextToDb(text) {
 function insertTask(inputValue) {
   const taskList = document.querySelector('.tasks-container ul');
   const insertMobileArrowIcon =
-    window.innerWidth < 420
+    window.screen.width < 420
       ? '<div class="lift-release-icon" aria-label="move a task"></div>'
       : '';
 

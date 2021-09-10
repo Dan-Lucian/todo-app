@@ -53,25 +53,25 @@ function changeImgByTheme() {
   function changeImgBg(isCookieThemeLight) {
     const bg = document.getElementById('background-image');
 
-    switch (`${isCookieThemeLight}_` + `${window.innerWidth > 420}`) {
+    switch (`${isCookieThemeLight}_` + `${window.screen.width > 420}`) {
       case 'false_false':
-        bg.src = '/todo-app/img/bg-mobile-dark.webp';
         changeDragMessage();
+        bg.src = '/todo-app/img/bg-mobile-dark.webp';
         break;
 
       case 'false_true':
-        bg.src = '/todo-app/img/bg-desktop-dark.webp';
         mergeButtons();
+        bg.src = '/todo-app/img/bg-desktop-dark.webp';
         break;
 
       case 'true_false':
-        bg.src = '/todo-app/img/bg-mobile-light.webp';
         changeDragMessage();
+        bg.src = '/todo-app/img/bg-mobile-light.webp';
         break;
 
       case 'true_true':
-        bg.src = '/todo-app/img/bg-desktop-light.webp';
         mergeButtons();
+        bg.src = '/todo-app/img/bg-desktop-light.webp';
         break;
     }
   }
@@ -86,6 +86,7 @@ function changeImgByTheme() {
   }
 
   function mergeButtons() {
+    debugger;
     const tasksFilter = document.getElementById('tasks-filter');
     tasksFilter.remove();
     document.getElementById('tasks-left').after(tasksFilter);

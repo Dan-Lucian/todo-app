@@ -44,7 +44,7 @@ function insertTask(inputValue, id, status, order) {
   const insertCheckedClass = status === 'active' ? '' : ' checked';
   const insertHiddenClass = status === 'active' ? ' hidden' : '';
   const insertMobileArrowIcon =
-    window.innerWidth < 420
+    window.screen.width < 420
       ? '<div class="lift-release-icon" aria-label="move a task"></div>'
       : '';
 

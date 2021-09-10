@@ -12,7 +12,7 @@ function changeCookieTheme() {
 }
 function changeImgBg(e) {
   const t = document.getElementById('background-image');
-  switch (`${e}_` + `${window.innerWidth > 420}`) {
+  switch (`${e}_` + `${window.screen.width > 420}`) {
     case 'false_false':
       t.src = '/todo-app/img/bg-mobile-dark.webp';
       break;
