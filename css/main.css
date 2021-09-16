@@ -772,6 +772,9 @@ button:focus {
 .simulated-hover .lift-release-icon {
   transform: translateY(0);
 }
+.simulated-hover .rotate-180 {
+  transform: rotate(180deg) translateY(0);
+}
 
 @media screen and (min-width: 420px) {
   .task-row:hover,
@@ -785,10 +788,6 @@ button:focus {
 .task-row:focus .lift-release-icon {
     transform: translateY(0);
   }
-}
-
-.rotate-180 {
-  transform: rotate(180deg) translateY(1px);
 }
 
 .btn {

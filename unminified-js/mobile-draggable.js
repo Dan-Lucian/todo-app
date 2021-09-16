@@ -56,7 +56,6 @@ export function makeMobileDraggable() {
   draggable.addEventListener('pointerdown', onPointerDown);
   function onPointerDown(e) {
     if (e.target === e.currentTarget.querySelector('.lift-release-icon')) {
-      console.log('swap order');
       swapOrder(draggable, placeholder);
 
       placeholder.replaceWith(draggable);
@@ -140,7 +139,6 @@ export function makeMobileDraggable() {
     //pointer up event
     draggable.addEventListener('pointerup', onPointerUp);
     function onPointerUp(e) {
-      console.log('pointer up triggered');
       document.removeEventListener('pointermove', onPointerMove);
     }
   }

@@ -87,6 +87,10 @@ button:focus {
   .lift-release-icon {
     transform: translateY(0);
   }
+
+  & .rotate-180 {
+    transform: rotate(180deg) translateY(0);
+  }
 }
 
 .task-row:hover,
@@ -100,10 +104,6 @@ button:focus {
       transform: translateY(0);
     }
   }
-}
-
-.rotate-180 {
-  transform: rotate(180deg) translateY(1px);
 }
 
 .btn {
