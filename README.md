@@ -6,7 +6,7 @@
 
 ### Designs I had
 ![alt text](https://github.com/Dan-Lucian/todo-app/tree/main/design/desktop-design-light.jpg "Desktop light theme")
-![alt text](https://github.com/Dan-Lucian/todo-app/tree/main/design/desktop-design-dark.jpg "Desktop dark theme")
+![alt text](https://raw.githubusercontent.com/Dan-Lucian/todo-app/main/design/active-states-dark.jpg "Desktop dark theme")
 ![alt text](https://github.com/Dan-Lucian/todo-app/tree/main/design/mobile-design-light.jpg "Mobile light theme")
 ![alt text](https://github.com/Dan-Lucian/todo-app/tree/main/design/mobile-design-dark.jpg "Mobile dark theme")
  
