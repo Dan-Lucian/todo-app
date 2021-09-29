@@ -5,7 +5,7 @@
 * I implemented the necessary features for the app to work.
 
 ### Designs I had
-![alt text](https://github.com/Dan-Lucian/todo-app/design/desktop-design-light.jpg)
+![alt text](https://github.com/Dan-Lucian/todo-app/design/desktop-design-light.jpg "Desktop light theme")
 ![alt text](https://github.com/Dan-Lucian/todo-app/design/desktop-design-dark.jpg)
 ![alt text](https://github.com/Dan-Lucian/todo-app/design/mobile-design-light.jpg)
 ![alt text](https://github.com/Dan-Lucian/todo-app/design/mobile-design-dark.jpg)
