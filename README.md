@@ -5,10 +5,10 @@
 * I implemented the necessary features for the app to work.
 
 ### Designs I had
-![alt text](https://github.com/Dan-Lucian/todo-app/design/desktop-design-light.jpg "Desktop light theme")
-![alt text](https://github.com/Dan-Lucian/todo-app/design/desktop-design-dark.jpg)
-![alt text](https://github.com/Dan-Lucian/todo-app/design/mobile-design-light.jpg)
-![alt text](https://github.com/Dan-Lucian/todo-app/design/mobile-design-dark.jpg)
+![alt text](https://github.com/Dan-Lucian/todo-app/tree/main/design/desktop-design-light.jpg "Desktop light theme")
+![alt text](https://github.com/Dan-Lucian/todo-app/tree/main/design/desktop-design-dark.jpg "Desktop dark theme")
+![alt text](https://github.com/Dan-Lucian/todo-app/tree/main/design/mobile-design-light.jpg "Mobile light theme")
+![alt text](https://github.com/Dan-Lucian/todo-app/tree/main/design/mobile-design-dark.jpg "Mobile dark theme")
  
 ### What can it do
 * The list is saved on Firebase.
