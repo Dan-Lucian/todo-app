@@ -1,6 +1,6 @@
 # Vanilla JS todo-app synced with Firebase
  
-Features
+<h1>What can it do</h1>
 * The list is saved on Firebase.
 * Single page app, no loading after the initial load.
 * Drag & drop functionality for both mobile and desktop.
